@@ -176,7 +176,17 @@ public class User implements Principal {
         this.setId(dto.getId());
         this.setName(dto.getName());
         this.setPassword(dto.getPassword());
+        this.setEmail(dto.getEmail());
+        this.setCodep(dto.getCodep());
+        this.setFixe(dto.getFixe());
+        this.setFonction(dto.getFonction());
+        this.setMobile(dto.getMobile());
+        this.setRole(dto.getRole());
+        this.setRue(dto.getRue());
+        this.setSociete(dto.getSociete());
+        this.setVille(dto.getVille());
     }
+    
 
     public UserDto convertToDto() {
         UserDto dto = new UserDto();
@@ -185,6 +195,15 @@ public class User implements Principal {
         dto.setId(this.getId());
         dto.setName(this.getName());
         dto.setPassword(this.getPassword());
+        dto.setCodep(this.getCodep());
+        dto.setEmail(this.getEmail());
+        dto.setFixe(this.fixe);
+        dto.setFonction(this.getFonction());
+        dto.setMobile(this.getMobile());
+        dto.setRole(this.getRole());
+        dto.setRue(this.getRue());
+        dto.setSociete(this.getSociete());
+        dto.setVille(this.getVille());
         return dto;
     }
 
