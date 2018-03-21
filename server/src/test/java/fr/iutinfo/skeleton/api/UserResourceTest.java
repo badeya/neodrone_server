@@ -43,8 +43,8 @@ public class UserResourceTest extends JerseyTest {
     @Test
     public void read_user_should_return_good_alias() {
         createRms();
-        UserDto user = target(PATH + "/Richard Stallman").request().get(UserDto.class);
-        assertEquals("RMS", user.getAlias());
+        UserDto user = target(PATH + "/carle").request().get(UserDto.class);
+        assertEquals("carle", user.getName());
     }
 
     @Test

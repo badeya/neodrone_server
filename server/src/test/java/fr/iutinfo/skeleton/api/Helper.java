@@ -52,29 +52,37 @@ public class Helper {
     }
 
 
-    private static User createFullUSer(String name, String alias, String email, String paswword) {
+    private static User createFullUSer(String name, String prenom,String role,String societe,String fonction,String ville,String codep,String rue,String mobile,String fixe,String email,String password) {
         User user = new User(0, name);
-        user.setAlias(alias);
+        user.setPrenom(prenom);
+        user.setRole(role);
+        user.setSociete(societe);
+        user.setFonction(fonction);
+        user.setVille(ville);
+        user.setCodep(codep);
+        user.setRue(rue);
+        user.setMobile(mobile);
+        user.setFixe(fixe);
         user.setEmail(email);
-        user.setPassword(paswword);
+        user.setPassword(password);
         int id = dao.insert(user);
         user.setId(id);
         return user;
     }
 
     static void createRms() {
-        createFullUSer("Richard Stallman", "RMS", "rms@fsf.org", "gnuPaswword");
+        createFullUSer("Richard", "Stallman", "client", "emacs", "pdg","lille","59000","rue de la liberte", "0668141419","0320454548","stallman@emacs.com","mdp");
     }
 
     static User createRob() {
-        return createFullUSer("Robert Capillo", "rob", "rob@fsf.org", "paswword");
+        return createFullUSer("Jean", "bon", "client", "apple", "pdg","lille","59000","rue de la paix", "066814719","0324654548","bon@apple.com","mdp");
     }
 
     static User createLinus() {
-        return createFullUSer("Linus Torvalds", "linus", "linus@linux.org", "paswword");
+        return createFullUSer("Jean", "Carl", "client", "reseau", "professeur","lille","59000","rue Solferino", "0668141548","032002548","jcarle@oui.com","mdp");
     }
 
     static User createIan() {
-        return createFullUSer("Ian Murdock", "debian", "ian@debian.org", "mot de passe");
+        return createFullUSer("Bruno", "bofils", "client", "systeme", "pdg","lille","59000","rue de Solferino", "0664545419","0320858548","bofils@non.com","mdp");
     }
 }
