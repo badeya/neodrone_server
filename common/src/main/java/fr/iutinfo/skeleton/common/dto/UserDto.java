@@ -8,7 +8,7 @@ import java.security.Principal;
 public class UserDto {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
     private String name;
-    private String alias;
+    private String prenom;
     private int id = 0;
     private String email;
     private String password;
@@ -45,12 +45,12 @@ public class UserDto {
         this.password = password;
     }
 
-    public String getAlias() {
-        return alias;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
 }

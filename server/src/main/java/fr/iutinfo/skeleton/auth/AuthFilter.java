@@ -1,10 +1,11 @@
 package fr.iutinfo.skeleton.auth;
 
-import fr.iutinfo.skeleton.api.BDDFactory;
-import fr.iutinfo.skeleton.api.User;
-import fr.iutinfo.skeleton.api.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import fr.iutinfo.neodrone.api.BDDFactory;
+import fr.iutinfo.neodrone.api.User;
+import fr.iutinfo.neodrone.api.UserDao;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;

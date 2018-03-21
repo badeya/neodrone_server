@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.neodrone.api;
 
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import org.slf4j.Logger;

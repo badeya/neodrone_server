@@ -5,6 +5,9 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.iutinfo.neodrone.api.Api;
+import fr.iutinfo.neodrone.api.User;
+
 import javax.ws.rs.core.Application;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;

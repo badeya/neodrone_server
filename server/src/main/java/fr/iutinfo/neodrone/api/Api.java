@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.neodrone.api;
 
 import fr.iutinfo.skeleton.auth.AuthFilter;
 import org.glassfish.jersey.server.ResourceConfig;

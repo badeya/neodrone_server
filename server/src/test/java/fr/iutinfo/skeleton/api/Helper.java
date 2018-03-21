@@ -1,5 +1,8 @@
 package fr.iutinfo.skeleton.api;
 
+import fr.iutinfo.neodrone.api.BDDFactory;
+import fr.iutinfo.neodrone.api.User;
+import fr.iutinfo.neodrone.api.UserDao;
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
