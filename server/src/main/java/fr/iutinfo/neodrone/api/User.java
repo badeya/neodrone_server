@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.neodrone.api;
 
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
@@ -14,7 +14,15 @@ public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User(-1, "Anonymous", "anonym");
     private String name;
-    private String alias;
+    private String prenom;
+    private String role;
+    private String societe;
+    private String fonction;
+    private String ville;
+    private String codep;
+    private String rue;
+    private String mobile;
+    private String fixe;
     private int id = 0;
     private String email;
     private String password;
@@ -27,10 +35,10 @@ public class User implements Principal {
         this.name = name;
     }
 
-    public User(int id, String name, String alias) {
+    public User(int id, String name, String prenom) {
         this.id = id;
         this.name = name;
-        this.alias = alias;
+        this.prenom = prenom;
     }
 
     public User() {
@@ -100,14 +108,14 @@ public class User implements Principal {
         if (getClass() != arg.getClass())
             return false;
         User user = (User) arg;
-        return name.equals(user.name) && alias.equals(user.alias) && email.equals(user.email) && passwdHash.equals(user.getPasswdHash()) && salt.equals((user.getSalt()));
+        return name.equals(user.name) && prenom.equals(user.prenom) && email.equals(user.email) && passwdHash.equals(user.getPasswdHash()) && salt.equals((user.getSalt()));
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((alias == null) ? 0 : alias.hashCode());
+        result = prime * result + ((prenom == null) ? 0 : prenom.hashCode());
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((passwdHash == null) ? 0 : passwdHash.hashCode());
@@ -117,16 +125,9 @@ public class User implements Principal {
     
     @Override
     public String toString() {
-        return id + ": " + alias + ", " + name + " <" + email + ">";
+        return id + ": " + prenom + ", " + name + " <" + email + ">";
     }
 
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
 
     public String getSalt() {
         if (salt == null) {
@@ -161,7 +162,7 @@ public class User implements Principal {
     }
 
     public String getSearch() {
-        search = name + " " + alias + " " + email;
+        search = name + " " + prenom + " " + email;
         return search;
     }
 
@@ -170,7 +171,7 @@ public class User implements Principal {
     }
 
     public void initFromDto(UserDto dto) {
-        this.setAlias(dto.getAlias());
+        this.setPrenom(dto.getPrenom());
         this.setEmail(dto.getEmail());
         this.setId(dto.getId());
         this.setName(dto.getName());
@@ -179,11 +180,83 @@ public class User implements Principal {
 
     public UserDto convertToDto() {
         UserDto dto = new UserDto();
-        dto.setAlias(this.getAlias());
+        dto.setPrenom(this.getPrenom());
         dto.setEmail(this.getEmail());
         dto.setId(this.getId());
         dto.setName(this.getName());
         dto.setPassword(this.getPassword());
         return dto;
     }
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getSociete() {
+		return societe;
+	}
+
+	public void setSociete(String societe) {
+		this.societe = societe;
+	}
+
+	public String getFonction() {
+		return fonction;
+	}
+
+	public void setFonction(String fonction) {
+		this.fonction = fonction;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public String getCodep() {
+		return codep;
+	}
+
+	public void setCodep(String codep) {
+		this.codep = codep;
+	}
+
+	public String getRue() {
+		return rue;
+	}
+
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getFixe() {
+		return fixe;
+	}
+
+	public void setFixe(String fixe) {
+		this.fixe = fixe;
+	}
 }

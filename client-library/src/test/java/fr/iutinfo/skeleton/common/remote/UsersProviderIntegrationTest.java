@@ -1,9 +1,9 @@
 package fr.iutinfo.skeleton.common.remote;
 
-import fr.iutinfo.skeleton.api.Api;
-import fr.iutinfo.skeleton.api.BDDFactory;
-import fr.iutinfo.skeleton.api.User;
-import fr.iutinfo.skeleton.api.UserDao;
+import fr.iutinfo.neodrone.api.Api;
+import fr.iutinfo.neodrone.api.BDDFactory;
+import fr.iutinfo.neodrone.api.User;
+import fr.iutinfo.neodrone.api.UserDao;
 import fr.iutinfo.skeleton.common.dto.UserDto;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Assert;

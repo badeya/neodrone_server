@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.neodrone.api;
 
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
@@ -10,7 +10,7 @@ public interface UserDao {
     @SqlUpdate("create table users (id integer primary key autoincrement, name varchar(100), alias varchar(100), email varchar(100), passwdHash varchar(64), salt varchar(64), search varchar(1024))")
     void createUserTable();
 
-    @SqlUpdate("insert into users (name,alias,email, passwdHash, salt, search) values (:name, :alias, :email, :passwdHash, :salt, :search)")
+    @SqlUpdate("insert into users (name,prenom,email, passwdHash, salt, search) values (:name, :prenom, :email, :passwdHash, :salt, :search)")
     @GetGeneratedKeys
     int insert(@BindBean() User user);
 
