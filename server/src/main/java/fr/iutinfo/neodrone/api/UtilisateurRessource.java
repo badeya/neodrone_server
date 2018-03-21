@@ -16,7 +16,6 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fr.iutinfo.skeleton.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 
 @Path("/Utilisateur")
@@ -26,7 +25,7 @@ public class UtilisateurRessource {
 	final static Logger logger = LoggerFactory.getLogger(UtilisateurRessource.class);
     private static UtilisateurDAO dao = getDbi().open(UtilisateurDAO.class);
     
-    public UtlisateurRessource() throws SQLException {
+    public void UtlisateurRessource() throws SQLException {
         if (!tableExist("users")) {
             logger.debug("Crate table users");
             dao.createUtilisateurTable();
