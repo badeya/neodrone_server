@@ -1,5 +1,7 @@
 package fr.iutinfo.neodrone.api;
 
+import java.util.List;
+
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
@@ -14,7 +16,11 @@ public interface UtilisateurDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Utilisateur findByName(@Bind("nom") String nom);
 	  
-	@SqlUpdate("insert into utilisateur (nom,prenom,) values (:name, :prenom, :email, :passwdHash, :salt, :search)")
+	@SqlUpdate("insert into utilisateur (nom,prenom,role,societe,fonction,ville,codep,rue,mobile,fixe,email,password) values (:nom, :prenom, :role, :societe, :fonction, :ville, :codep, :rue, :mobile, :fixe, :email, :password)")
     @GetGeneratedKeys
-    int insert(@BindBean() User user);  
+    int insert(@BindBean() Utilisateur user);  
+	
+	@SqlQuery("select * from utilisateur order by id")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Utilisateur> all();
 }
