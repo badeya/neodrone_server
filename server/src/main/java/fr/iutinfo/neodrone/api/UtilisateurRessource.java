@@ -29,13 +29,8 @@ public class UtilisateurRessource {
 	final static Logger logger = LoggerFactory.getLogger(UtilisateurRessource.class);
     private static UtilisateurDAO dao = getDbi().open(UtilisateurDAO.class);
     
-<<<<<<< HEAD
-    public void UtlisateurRessource() throws SQLException {
-        if (!tableExist("users")) {
-=======
     public UtilisateurRessource() throws SQLException {
         if (!tableExist("utilisateur")) {
->>>>>>> e7c0424f9c18fbbb0035acc394dc3b46da48d55c
             logger.debug("Crate table users");
             dao.createUtilisateurTable();
             dao.insert(new Utilisateur(1, "Carle", "Jean"));
