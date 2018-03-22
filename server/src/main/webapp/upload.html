@@ -1,0 +1,54 @@
+<html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<form method="post" action="/test/upload"
+	enctype="multipart/form-data">
+	<input type="hidden" name="action" value="upload" /> <label>Load
+		your file:</label> <input type="file" name="attachment" /> <br /> <input
+		type="submit" value="Upload file" />
+</form>
+
+<!-- <form  id="contact_form" method="post" action="test/upload"  ENCTYPE="multipart/form-data">
+	//... <label id="exampleFileUploadLabel" for="exampleFileUpload" class="ajouter button">Ajouter une<br />piece jointe (1Mo max.)</label>
+<input type="file" id="exampleFileUpload" name="exampleFileUpload" class="show-for-sr" size="1048576"><!--max 1048576 octets = 1 Mo
+<input type="submit" class="envoyer button" value="Envoyer">
+</form>
+
+
+<script>
+$( "#contact_form" ).submit(function(event) {
+	event.preventDefault();
+	var formData = new FormData();// get the form data
+		formData = {
+			'idDemo_form'	: $('input[name=idDemo_form]').val(),
+			'societe_form'	: $('input[name=societe_form]').val(),
+			'office_form'	: $('input[name=office_form]').val(),
+			'nom_form'		: $('input[name=nom_form]').val(),
+			'prenom_form'	: $('input[name=prenom_form]').val(),
+			'fonction_form'	: $('input[name=fonction_form]').val(),
+			'email_form'	: $('input[name=email_form]').val(),
+			'image_nom'		: ($('input[type=file]')[0].files[0]).name,
+			'image_size'	: ($('input[type=file]')[0].files[0]).size,
+			'image_type'	: ($('input[type=file]')[0].files[0]).type
+		};
+	
+		var form = $('form').get(0);
+		var formData = new FormData(form);// get the form data
+		// on envoi formData vers mail.php
+		$.ajax({
+			type		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+			url		: 'test/upload', // the url where we want to POST
+			data		: formData, // our data object
+			dataType	: 'json', // what type of data do we expect back from the server
+			processData: false,
+			contentType: false
+		})
+		// using the done promise callback
+		.done(function(data) {
+	//etc................................................
+	
+</script> -->
+</html>
