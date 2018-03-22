@@ -1,11 +1,13 @@
 package fr.iutinfo.neodrone.api;
 
+import java.security.Principal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 
-public class Utilisateur {
+public class Utilisateur implements Principal  {
     final static Logger logger = LoggerFactory.getLogger(Utilisateur.class);
     private String nom;
     private String prenom;
@@ -156,6 +158,11 @@ public class Utilisateur {
 		this.id = id;
 		this.email = email;
 		this.password = password;
+	}
+
+	@Override
+	public String getName() {
+		return this.nom;
 	}
     
 }	
