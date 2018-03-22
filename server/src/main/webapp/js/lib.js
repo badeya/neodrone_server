@@ -8,12 +8,16 @@ $("#formConnection").submit(function (event) {
 
   $("#messageErreur").hide();
 
-  getWithAuthorizationHeader("/test/login", authent());
+  getWithAuthorizationHeader("/test/login", afficheUser);
 });
 
 function authent() {
-  console.log("authen");
+  //console.log("authen");
 }
+
+$("#formAjoutUser").submit(function (event) {
+  event.preventDefault();
+});
 
 function getWithAuthorizationHeader(url, callback) {
   if ($("#login").val() != "") {
@@ -39,4 +43,8 @@ function getWithAuthorizationHeader(url, callback) {
 function afficheUser(data) {
   console.log(data);
   $("#output").html(userStringify(data));
+}
+
+function userStringify(user) {
+  return user.id + ". " + user.nom + " &lt;" + user.email + "&gt;" + " (" + user.prenom + ")";
 }
