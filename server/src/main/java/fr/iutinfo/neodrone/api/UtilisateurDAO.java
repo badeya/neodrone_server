@@ -18,7 +18,7 @@ public interface UtilisateurDAO {
 	
 	@SqlQuery("select * from utilisateur where id = :id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	Utilisateur findById(@Bind("id") int id);
+	Utilisateur findById(@Bind("id") String id);
 	  
 	@SqlUpdate("insert into utilisateur (nom,prenom,role,societe,fonction,ville,codep,rue,mobile,fixe,email,password) values (:nom, :prenom, :role, :societe, :fonction, :ville, :codep, :rue, :mobile, :fixe, :email, :password)")
     @GetGeneratedKeys
