@@ -4,9 +4,11 @@ import org.slf4j.LoggerFactory;
 
 public class MissionDTO {
     final static Logger logger = LoggerFactory.getLogger(MissionDTO.class);
-    private String Client;
+    
     private int id;
     private String Etat;
+    private String Client;
+    
 	public String getClient() {
 		return Client;
 	}

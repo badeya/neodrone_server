@@ -34,31 +34,28 @@ public class MissionRessource {
         if (!tableExist("mission")) {
             logger.debug("Crate table mission");
             dao.createMissionTable();
-            dao.insert(new Mission(1,"Carle","Debut"));
-            dao.insert(new Mission(2,"Carle","Fin"));
+            dao.insert(new Mission(1,"Debut","Jean"));
+            dao.insert(new Mission(2,"Fin","Carle"));
+            dao.insert(new Mission(3,"Debut","Carle"));
 
         }
     }
-    /*
+    
     @GET
-    @Path("/{id}")
-    public MissionDTO getId(@PathParam("id") int id) {
-    	Mission user = dao.findById(id);
-        if (user == null) {
-            throw new WebApplicationException(404);
+    @Path("/{nom}")
+    public List<MissionDTO> getUser(@PathParam("nom") String nom) {
+    	List<Mission> users;
+        users = dao.all();
+        List<MissionDTO> usersDTO = new ArrayList<MissionDTO>();
+        for(Mission u : users) {
+        	if(u.getClient().equals(nom))
+        	usersDTO.add(u.converToDTO());
         }
-        return user.converToDTO();
+        return usersDTO;
     }
-    */
-    @GET
-    @Path("/{client}")
-    public MissionDTO getClient(@PathParam("client") String id) {
-    	Mission user = dao.findByClient(id);
-        if (user == null) {
-            throw new WebApplicationException(404);
-        }
-        return user.converToDTO();
-    }
+    
+    
+    
     
     @GET
     public List<MissionDTO> getAllUsers() {

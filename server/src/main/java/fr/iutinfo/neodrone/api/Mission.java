@@ -6,20 +6,22 @@ import fr.iutinfo.skeleton.common.dto.MissionDTO;
 import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 public class Mission {
     final static Logger logger = LoggerFactory.getLogger(Mission.class);
-    private String client;
     private int id;
     private String etat;
+    private String client;
     
     public Mission() {
     	
     }
 
-	public Mission( int id,String client, String etat) {
+	public Mission( int id, String etat, String client) {
 		super();
-		this.client = client;
+
 		this.id = id;
 		this.etat = etat;
+		this.client=client;
 	}
+
 
 	public String getClient() {
 		return client;
@@ -51,9 +53,9 @@ public class Mission {
 	
 	public MissionDTO converToDTO() {
 		MissionDTO mission = new MissionDTO();
-		mission.setClient(client);
 		mission.setEtat(etat);
 		mission.setId(id);
+		mission.setClient(client);
 		return mission;
 	}
 }
