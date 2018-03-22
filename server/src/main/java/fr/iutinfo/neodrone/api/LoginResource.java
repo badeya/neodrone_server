@@ -1,6 +1,6 @@
 package fr.iutinfo.neodrone.api;
 
-import fr.iutinfo.skeleton.common.dto.UserDto;
+import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,17 +16,17 @@ public class LoginResource {
 
     @GET
     @Path("/login")
-    public UserDto secureWhoAmI(@Context SecurityContext context) {
-        User user = (User) context.getUserPrincipal();
-        return user.convertToDto();
+    public UtilisateurDTO secureWhoAmI(@Context SecurityContext context) {
+        Utilisateur user = (Utilisateur) context.getUserPrincipal();
+        return user.converToDTO();
     }
 
     @GET
     @Path("/profile")
     @RolesAllowed({"user"})
-    public UserDto secureByAnnotation(@Context SecurityContext context) {
-        User user = (User) context.getUserPrincipal();
-        return user.convertToDto();
+    public UtilisateurDTO secureByAnnotation(@Context SecurityContext context) {
+        Utilisateur user = (Utilisateur) context.getUserPrincipal();
+        return user.converToDTO();
     }
 
 }

@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.neodrone.api.BDDFactory;
-import fr.iutinfo.neodrone.api.User;
-import fr.iutinfo.neodrone.api.UserDao;
+import fr.iutinfo.neodrone.api.Utilisateur;
+import fr.iutinfo.neodrone.api.UtilisateurDAO;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -32,23 +32,23 @@ public class AuthFilter implements ContainerRequestFilter {
             String login = loginPassword[0];
             String password = loginPassword[1];
             logger.debug("login : " + login + ", password : " + password);
-            User user = loadUserFromLogin(login);
+            Utilisateur user = loadUserFromLogin(login);
             if (user.isGoodPassword(password)) {
                 logger.debug("good password !");
                 containerRequest.setSecurityContext(new AppSecurityContext(user, scheme));
             } else {
-                containerRequest.setSecurityContext(new AppSecurityContext(User.getAnonymousUser(), scheme));
+                containerRequest.setSecurityContext(new AppSecurityContext(Utilisateur.getAnonymousUser(), scheme));
             }
         } else {
-            containerRequest.setSecurityContext(new AppSecurityContext(User.getAnonymousUser(), scheme));
+            containerRequest.setSecurityContext(new AppSecurityContext(Utilisateur.getAnonymousUser(), scheme));
         }
     }
 
-    private User loadUserFromLogin(String login) {
-        UserDao dao = BDDFactory.getDbi().open(UserDao.class);
-        User user = dao.findByName(login);
+    private Utilisateur loadUserFromLogin(String login) {
+        UtilisateurDAO dao = BDDFactory.getDbi().open(UtilisateurDAO.class);
+        Utilisateur user = dao.findByName(login);
         if (user == null) {
-            user = User.getAnonymousUser();
+            user = Utilisateur.getAnonymousUser();
         }
         return user;
     }

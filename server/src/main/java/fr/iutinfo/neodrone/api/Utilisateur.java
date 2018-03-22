@@ -1,9 +1,14 @@
 package fr.iutinfo.neodrone.api;
 
 import java.security.Principal;
+import java.security.SecureRandom;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hasher;
+import com.google.common.hash.Hashing;
 
 import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 
@@ -22,6 +27,10 @@ public class Utilisateur implements Principal  {
     private int id = 0;
     private String email;
     private String password;
+    private static Utilisateur anonymous = new Utilisateur(-1, "Anonymous", "anonym");
+    private String passwdHash;
+    private String salt;
+    private String search;
 	
     public Utilisateur(int id, String nom) {
         this.id = id;
@@ -159,10 +168,61 @@ public class Utilisateur implements Principal  {
 		this.email = email;
 		this.password = password;
 	}
+	
 
+	public boolean isGoodPassword(String password) {
+        if (isAnonymous()) {
+            return false;
+        }
+        String hash = buildHash(password, getSalt());
+        return hash.equals(getPasswdHash());
+    }
+	
+	public boolean isAnonymous() {
+        return this.getId() == getAnonymousUser().getId();
+    }
+	
+	 public static Utilisateur getAnonymousUser() {
+	        return anonymous;
+	    }
+	 
+	 private String buildHash(String password, String s) {
+	        Hasher hasher = Hashing.sha256().newHasher();
+	        hasher.putString(password + s, Charsets.UTF_8);
+	        return hasher.hash().toString();
+	    }
+	 
+	 public String getPasswdHash() {
+	        return passwdHash;
+	    }
+
+	    public void setPasswdHash(String passwdHash) {
+	        this.passwdHash = passwdHash;
+	    }
+	    public String getSalt() {
+	        if (salt == null) {
+	            salt = generateSalt();
+	        }
+	        return salt;
+	    }
+	    private String generateSalt() {
+	        SecureRandom random = new SecureRandom();
+	        Hasher hasher = Hashing.sha256().newHasher();
+	        hasher.putLong(random.nextLong());
+	        return hasher.hash().toString();
+	    }
+
+	    public void setSalt(String salt) {
+	        this.salt = salt;
+	    }
+	    
+	    public boolean isInUserGroup() {
+	        return !(id == anonymous.getId());
+	    }
 	@Override
 	public String getName() {
-		return this.nom;
+		// TODO Auto-generated method stub
+		return nom;
 	}
     
 }	
