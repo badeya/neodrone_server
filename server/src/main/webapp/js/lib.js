@@ -7,40 +7,36 @@ $("#formConnection").submit(function (event) {
   event.preventDefault();
 
   $("#messageErreur").hide();
-  var login = $('#formConnection').find('input[name="login"]').val();
-  var password = $('#formConnection').find('input[name="password"]').val();
 
-  //console.log(login);
-  //console.log(password);
+  getWithAuthorizationHeader("/test/login", authent());
+});
 
-  if (login.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+function authent() {
+  console.log("authen");
+}
 
-    //console.log(JSON.stringify($("form").serializeArray()));
+function getWithAuthorizationHeader(url, callback) {
+  if ($("#login").val() != "") {
     $.ajax({
-      url: "/test/connect",
-      type: "POST",
-      dataType: "json",
-      data: "{login :" + login + ",mdp :" + password + "}",
-      success: function success(json) {
-        authent(json);
+      type: "GET",
+      url: url,
+      dataType: 'json',
+      beforeSend: function beforeSend(req) {
+        req.setRequestHeader("Authorization", "Basic " + btoa($("#login").val() + ":" + $("#mdp").val()));
       },
-      error: function error(xhr, status, errorThrown) {
-        alert("Sorry, there was a problem!");
-        console.log("Error: " + errorThrown);
-        console.log("Status: " + status);
-        console.dir(xhr);
-      },
-      complete: function complete(xhr, status) {
-        console.log('ajax request completed !');
+      success: callback,
+      error: function error(jqXHR, textStatus, errorThrown) {
+        alert('error: ' + textStatus);
       }
     });
   } else {
-    //Gestion erreur saisie MAIL
-
-    $("#messageErreur").show();
+    $.getJSON(url, function (data) {
+      afficheUser(data);
+    });
   }
-});
+}
 
-function authent(json) {
-  console.log("rep :" + json);
+function afficheUser(data) {
+  console.log(data);
+  $("#output").html(userStringify(data));
 }
