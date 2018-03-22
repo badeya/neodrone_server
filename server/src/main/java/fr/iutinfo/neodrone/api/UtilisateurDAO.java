@@ -27,4 +27,14 @@ public interface UtilisateurDAO {
 	@SqlQuery("select * from utilisateur order by id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Utilisateur> all();
+	
+	@SqlQuery("select * from utilisateur where email = :email")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Utilisateur findByMail(@Bind("email") String email);
+	
+	@SqlQuery("select password from utilisateur where email = :email")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	String findMDPByMail(@Bind("email") String email);
+
+	
 }
