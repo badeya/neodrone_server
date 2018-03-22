@@ -36,5 +36,5 @@ public interface UtilisateurDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	String findMDPByMail(@Bind("email") String email);
 
-	
+
 }
