@@ -3,10 +3,12 @@ package fr.iutinfo.skeleton.auth;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import fr.iutinfo.neodrone.api.BDDFactory;
 import fr.iutinfo.neodrone.api.Utilisateur;
 import fr.iutinfo.neodrone.api.UtilisateurDAO;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
@@ -33,8 +35,10 @@ public class AuthFilter implements ContainerRequestFilter {
             String password = loginPassword[1];
             logger.debug("login : " + login + ", password : " + password);
             Utilisateur user = loadUserFromLogin(login);
+            System.out.println("on de vrait avoir carl : " + user.getNom());
             if (user.isGoodPassword(password)) {
-                logger.debug("good password !");
+                System.out.println("IS GOOOD PASSWORD");
+            	logger.debug("good password !");
                 containerRequest.setSecurityContext(new AppSecurityContext(user, scheme));
             } else {
                 containerRequest.setSecurityContext(new AppSecurityContext(Utilisateur.getAnonymousUser(), scheme));
@@ -47,9 +51,12 @@ public class AuthFilter implements ContainerRequestFilter {
     private Utilisateur loadUserFromLogin(String login) {
         UtilisateurDAO dao = BDDFactory.getDbi().open(UtilisateurDAO.class);
         Utilisateur user = dao.findByMail(login);
-        System.out.println("LE NOM DE LUTILISATEEEEEEEEEEEEEEEEEEEUR : "+user.getNom() );
+        if(user != null ) {
+        	System.out.println("CCCCCCCCCCCAAAAAAAAAAAAAAAARLE");
+        }
         if (user == null) {
-            user = Utilisateur.getAnonymousUser();
+            System.out.println("ON EST LA ");
+        	user = Utilisateur.getAnonymousUser();
         }
         return user;
     }

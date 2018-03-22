@@ -174,8 +174,10 @@ public class Utilisateur implements Principal  {
         if (isAnonymous()) {
             return false;
         }
-        String hash = buildHash(password, getSalt());
-        return hash.equals(getPasswdHash());
+        /*String hash = buildHash(password, getSalt());
+        return hash.equals(getPasswdHash());*/
+        //On remettra le Hash plus tard
+        return this.password.equals(password);
     }
 	
 	public boolean isAnonymous() {
