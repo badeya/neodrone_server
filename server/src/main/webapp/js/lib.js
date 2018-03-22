@@ -2,8 +2,7 @@
 
 //SCRIPT QUI GERE LA CONNEXION UTILISATEUR ET LE RETOUR DE CONNEXION
 
-var aze = 45;
-var azer = 88;
+var aze = 55;
 
 $("#formConnection").submit(function (event) {
   // des qu'il y a un event appeler la ligne suivante
@@ -24,7 +23,10 @@ $("#formConnection").submit(function (event) {
       type: "POST",
       dataType: "json",
       data: JSON.stringify($("form").serializeArray()),
-      success: function success(json) {},
+      success: function success(json) {
+
+        
+      },
       error: function error(xhr, status, errorThrown) {
         alert("Sorry, there was a problem!");
         console.log("Error: " + errorThrown);
