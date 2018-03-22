@@ -46,7 +46,8 @@ public class AuthFilter implements ContainerRequestFilter {
 
     private Utilisateur loadUserFromLogin(String login) {
         UtilisateurDAO dao = BDDFactory.getDbi().open(UtilisateurDAO.class);
-        Utilisateur user = dao.findByName(login);
+        Utilisateur user = dao.findByMail(login);
+        System.out.println("LE NOM DE LUTILISATEEEEEEEEEEEEEEEEEEEUR : "+user.getNom() );
         if (user == null) {
             user = Utilisateur.getAnonymousUser();
         }
