@@ -43,7 +43,7 @@ public class RestFileDemo  {
  
                 byte[] bytes = IOUtils.toByteArray(inputStream);
                 // constructs upload file path
-                fileName = "/home/infoetu/sengesc/null/" + fileName;
+                fileName = "/home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/main/webapp" + fileName;
                 writeFile(bytes, fileName);
  
                   
