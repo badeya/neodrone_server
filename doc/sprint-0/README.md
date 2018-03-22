@@ -18,12 +18,13 @@ Nom du scrum master du sprint : Arthur Badey
     Nous avons surtout échanger avec le porteur du projet sur les fonctionalité que nous aloons lui apporter
 
 ### Qu'avons nous observé ? 
-    Difficulter à mettre en place les user story et découpage des fonctionalitées
+    Difficultées à mettre en place les user story et découpage des fonctionalitées
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-
+    
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
+    
 
 
 ### À quoi verra-t-on que celà à fonctionné ?
