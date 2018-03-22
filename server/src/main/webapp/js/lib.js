@@ -1,7 +1,5 @@
 "use strict";
 
-//SCRIPT QUI GERE LA CONNEXION UTILISATEUR ET LE RETOUR DE CONNEXION
-
 var aze = 55;
 
 $("#formConnection").submit(function (event) {
@@ -17,12 +15,12 @@ $("#formConnection").submit(function (event) {
 
   if (login.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
 
-    console.log(JSON.stringify($("form").serializeArray()));
+    //console.log(JSON.stringify($("form").serializeArray()));
     $.ajax({
       url: "/test/connect",
       type: "POST",
       dataType: "json",
-      data: "{login :" + login + ",mdp :" +password +"}",
+      data: "{login :" + login + ",mdp :" + password + "}",
       success: function success(json) {
         authent(json);
       },
@@ -43,6 +41,6 @@ $("#formConnection").submit(function (event) {
   }
 });
 
-function authent(json){
-  console.log("rep :"+json);
+function authent(json) {
+  console.log("rep :" + json);
 }
