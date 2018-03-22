@@ -3,6 +3,7 @@ package fr.iutinfo.neodrone.api;
 import static fr.iutinfo.neodrone.api.BDDFactory.getDbi;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
@@ -11,7 +12,7 @@ public class ConnectRessource {
 	
     private static UtilisateurDAO dao = getDbi().open(UtilisateurDAO.class);
 
-	@GET
+	@POST
 	@Path("/connect")
 	public int verif(@PathParam("login") String login, @PathParam("mdp") String mdp) {
 		Utilisateur user = dao.findByMail(login);
