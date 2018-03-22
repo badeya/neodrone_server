@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap Tree View</title>
+    <script type="text/javascript"></script>
+    <script src='jquery-3.3.1.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/css/bootstrap-treeview.css"> 
+    <link  rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://jonmiles.github.io/bootstrap-treeview/bower_components/jquery/dist/jquery.js"></script>
+    <script src="http://jonmiles.github.io/bootstrap-treeview/js/bootstrap-treeview.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    <link  rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="http://jonmiles.github.io/bootstrap-treeview/bower_components/jquery/dist/jquery.js"></script>
+  	<script src="http://jonmiles.github.io/bootstrap-treeview/js/bootstrap-treeview.js"></script>
+  
+    <body>
+  
+  
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#infos">INFOS</a></li>
+        <li><a data-toggle="tab" href="#files">FILES</a></li>
+    </ul>
+          
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <h3>HOME</h3>
+              <p>BLABLABLA DU HOME</p>
+            </div>
+            <div id="infos" class="tab-pane">
+              <h3>INFOS</h3>
+              <p>BLABLA DES INFOS</p>
+            </div>
+            <div id="files" class="tab-pane fade">
+                  <h3>FILES</h3>
+                   
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                             <div id="treeview4" class=""></div>
+                        </div>
+                    </div>
+                </div>
+                <script>    
+                        var defaultData = [
+                            {
+                                text: 'mission1',
+                                href: '#parent1',
+                                nodes: [
+                                {
+                                    text: 'FILE 1',
+                                    href: '#child1',                
+                                },
+                                {
+                                    text: 'FILE 2',
+                                    href: '#child2',
+                                    
+                                }
+                                ]
+                            },
+                            {
+                                text: 'mission2',
+                                href: '#parent2',
+                                nodes: [
+                                    {
+                                        text: 'FILE 1',
+                                        icon: 'glyphicon glyphicon-camera',
+                                        href: 'localhost:8080',
+                                        selectable: true,
+                                        state: {
+                                            checked: false,
+                                            disabled: false,
+                                            expanded: false,
+                                            selected: false
+                                        },
+                                    },
+                                    {
+                                        text: 'FILE 2',
+                                        icon: 'glyphicon glyphicon-film',
+                                        href: 'http://www.google.fr',
+                                        selectable: true,
+                                        state: {
+                                            checked: false,
+                                            disabled: false,
+                                            expanded: false,
+                                            selected: false
+                                        },
+                                    }
+                                ]
+                            },
+                            {
+                                text: 'mission3',
+                                href: '#parent3',
+                            },
+                            {
+                                text: 'mission4',
+                                href: '#parent4',
+                            },
+                            {
+                                text: 'mission5',
+                                href: '#parent5'  ,
+                            }
+                            ];                          
+                   
+
+
+                    $('#treeview4').treeview({
+                            color: "#428bca",
+                            data: defaultData,
+                            enableLinks: true
+                    });
+                </script>
+            </div>
+         </div>
+   
+      
+   
+    
+
+  </body>
+</html>
