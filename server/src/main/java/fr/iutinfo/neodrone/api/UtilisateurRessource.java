@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -51,6 +53,15 @@ public class UtilisateurRessource {
             throw new WebApplicationException(404);
         }
         return user.converToDTO();
+    }
+    
+    @POST
+    //@RolesAllowed({"admin"})
+    @Path("/insertion")
+    public void postUser(@PathParam("nom") String nom ,@PathParam("prenom") String prenom,@PathParam("role") String role,@PathParam("societe") String societe ,@PathParam("fonction") String fonction,@PathParam("ville") String ville,@PathParam("codep") String codep,@PathParam("rue") String rue,@PathParam("mobile") String mobile,@PathParam("fixe") String fixe,@PathParam("email") String email,@PathParam("password") String password)
+    {
+    	 dao.insert(new Utilisateur(1,nom,prenom,role,societe,fonction,ville,codep,rue,mobile,fixe,email,password));
+
     }
     /*
     @GET
