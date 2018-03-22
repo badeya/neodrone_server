@@ -30,10 +30,13 @@ public class UtilisateurRessource {
     private static UtilisateurDAO dao = getDbi().open(UtilisateurDAO.class);
     
     public UtilisateurRessource() throws SQLException {
+    	logger.debug("Crate table users if necessary");
         if (!tableExist("utilisateur")) {
             logger.debug("Crate table users");
             dao.createUtilisateurTable();
-            dao.insert(new Utilisateur(1, "Carle", "Jean"));
+           // dao.insert(new Utilisateur(1, "Carle", "Jean"));
+            dao.insert(new Utilisateur(1, "Carle", "Jean","test"));
+            dao.insert(new Utilisateur(2, "larle", "Jean","test"));
         }
     }
     

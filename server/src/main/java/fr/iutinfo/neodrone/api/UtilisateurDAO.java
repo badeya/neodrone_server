@@ -12,7 +12,7 @@ public interface UtilisateurDAO {
 	void createUtilisateurTable();
 	
 	
-	@SqlQuery("select * from users where nom = :nom")
+	@SqlQuery("select * from utilisateur where nom = :nom")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Utilisateur findByName(@Bind("nom") String nom);
 	  

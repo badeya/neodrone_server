@@ -31,6 +31,12 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = prenom;
     }
+    public Utilisateur(int id, String nom, String prenom, String societe) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.societe=societe;
+    }
 
     public Utilisateur() {
     }
@@ -122,6 +128,7 @@ public class Utilisateur {
 		UtilisateurDTO user = new UtilisateurDTO();
 		user.setNom(nom);
 		user.setPrenom(prenom);
+		user.setSociete(societe);
 		return user;
 	}
     
