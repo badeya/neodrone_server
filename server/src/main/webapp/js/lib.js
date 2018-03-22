@@ -10,7 +10,6 @@ $("#formConnection").submit(function (event) {
   event.preventDefault();
 
   $("#messageErreur").hide();
-  //alert( "Handler for .submit() called." );
   var login = $('#formConnection').find('input[name="login"]').val();
   var password = $('#formConnection').find('input[name="password"]').val();
 
