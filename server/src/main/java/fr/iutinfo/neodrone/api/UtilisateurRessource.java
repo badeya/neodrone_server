@@ -35,21 +35,34 @@ public class UtilisateurRessource {
             logger.debug("Crate table users");
             dao.createUtilisateurTable();
            // dao.insert(new Utilisateur(1, "Carle", "Jean"));
-            dao.insert(new Utilisateur(1, "Carle", "Jean","test"));
-            dao.insert(new Utilisateur(2, "larle", "Jean","test"));
+           // dao.insert(new Utilisateur(1, "Carle", "Jean","test"));
+            //dao.insert(new Utilisateur(2, "larle", "Jean","test"));
+            dao.insert(new Utilisateur(1,"Carle","Jean","admin","neodrone","pdg","Lille","59000","rue 1","0602","0302","test@gmail.com","mdp"));
+            dao.insert(new Utilisateur(2,"Bruno","François","client","neodrone","sousfifre","Paris","59000","rue de la liberté","06020040040","0300042012","dsdsds@gmail.com","mdp2ouf"));
+
         }
     }
     
     @GET
     @Path("/{nom}")
     public UtilisateurDTO getUser(@PathParam("nom") String nom) {
+        Utilisateur user = dao.findById(nom);
+        if (user == null) {
+            throw new WebApplicationException(404);
+        }
+        return user.converToDTO();
+    }
+    /*
+    @GET
+    @Path("/{id}")
+    public UtilisateurDTO getId(@PathParam("nom") String nom) {
         Utilisateur user = dao.findByName(nom);
         if (user == null) {
             throw new WebApplicationException(404);
         }
         return user.converToDTO();
     }
-    
+    */
     @GET
     public List<UtilisateurDTO> getAllUsers() {
         List<Utilisateur> users;
@@ -57,6 +70,7 @@ public class UtilisateurRessource {
         List<UtilisateurDTO> usersDTO = new ArrayList<UtilisateurDTO>();
         for(Utilisateur u : users) {
         	usersDTO.add(u.converToDTO());
+        	System.out.println(u.getNom());
         }
         return usersDTO;
     }

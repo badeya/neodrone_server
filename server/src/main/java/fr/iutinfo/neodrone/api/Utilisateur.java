@@ -128,8 +128,34 @@ public class Utilisateur {
 		UtilisateurDTO user = new UtilisateurDTO();
 		user.setNom(nom);
 		user.setPrenom(prenom);
+		user.setRole(role);
+		user.setCodep(codep);
+		user.setEmail(email);
+		user.setFixe(fixe);
+		user.setFonction(fonction);
+		user.setId(id);
+		user.setMobile(mobile);
+		user.setRue(rue);
 		user.setSociete(societe);
 		return user;
+	}
+
+	public Utilisateur( int id ,String nom, String prenom, String role, String societe, String fonction, String ville,
+			String codep, String rue, String mobile, String fixe, String email, String password) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.role = role;
+		this.societe = societe;
+		this.fonction = fonction;
+		this.ville = ville;
+		this.codep = codep;
+		this.rue = rue;
+		this.mobile = mobile;
+		this.fixe = fixe;
+		this.id = id;
+		this.email = email;
+		this.password = password;
 	}
     
 }	

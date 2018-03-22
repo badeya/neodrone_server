@@ -19,13 +19,12 @@ $("#formConnection").submit(function (event) {
 
     console.log(JSON.stringify($("form").serializeArray()));
     $.ajax({
-      url: "",
+      url: "/test/connect",
       type: "POST",
       dataType: "json",
-      data: JSON.stringify($("form").serializeArray()),
+      data: "{login :" + login + ",mdp :" +password +"}",
       success: function success(json) {
-
-        
+        authent(json);
       },
       error: function error(xhr, status, errorThrown) {
         alert("Sorry, there was a problem!");
@@ -43,3 +42,7 @@ $("#formConnection").submit(function (event) {
     $("#messageErreur").show();
   }
 });
+
+function authent(json){
+  console.log("rep :"+json);
+}

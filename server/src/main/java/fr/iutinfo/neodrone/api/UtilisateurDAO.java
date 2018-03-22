@@ -15,6 +15,10 @@ public interface UtilisateurDAO {
 	@SqlQuery("select * from utilisateur where nom = :nom")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Utilisateur findByName(@Bind("nom") String nom);
+	
+	@SqlQuery("select * from utilisateur where id = :id")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Utilisateur findById(@Bind("id") String id);
 	  
 	@SqlUpdate("insert into utilisateur (nom,prenom,role,societe,fonction,ville,codep,rue,mobile,fixe,email,password) values (:nom, :prenom, :role, :societe, :fonction, :ville, :codep, :rue, :mobile, :fixe, :email, :password)")
     @GetGeneratedKeys
@@ -23,4 +27,14 @@ public interface UtilisateurDAO {
 	@SqlQuery("select * from utilisateur order by id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Utilisateur> all();
+	
+	@SqlQuery("select * from utilisateur where email = :email")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Utilisateur findByMail(@Bind("email") String email);
+	
+	@SqlQuery("select password from utilisateur where email = :email")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	String findMDPByMail(@Bind("email") String email);
+
+	
 }
