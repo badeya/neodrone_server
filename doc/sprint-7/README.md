@@ -1,15 +1,18 @@
 # Rétrospective de sprint
 
-Nom du scrum master du sprint : Charles
+Nom du scrum master du sprint : jerôme
 
 ## Ce que nous avons fait durant ce sprint
 - interface client amélioré
-- finition interface android
+- upload foctionel
+- integrer l'arboresence des fichiers dans l'interface client
+- téléchargement video
+- connexion de l'app au serveur
 
 ## Ce que nous allons faire durant le prochain sprint
+- drag and drop upload
+- envoi des infos client au serveur
 - authentification
-- test dl avec les video
-
 
 
 

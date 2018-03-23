@@ -12,19 +12,22 @@ import javax.ws.rs.core.MediaType;
 @Path("/")
 public class DowloadDemo {
 
-	private static final String FILE_PATH = "/home/infoetu/badeya/Bureau/test.jpeg";
+	private static final String FILE_PATH = "/home/infoetu/badeya/nedrone/neodrone_serveur/server/src/main/webapp"
+			+ "/dowload/videotest.png";
+	private static final String FILE_PATH2 = "/tmp/DJI_0137.MOV";
 
 	@GET
 	@Path("/download")
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
 	public Response getFile() {
 
-		File file = new File(FILE_PATH);
+		File file = new File(FILE_PATH2);
 
 		ResponseBuilder response = Response.ok((Object) file);
 		response.header("Content-Disposition", "attachment; filename="+file.getName());
 		return response.build();
 
+		
 	}
 
 }

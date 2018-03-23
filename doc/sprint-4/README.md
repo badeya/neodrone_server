@@ -3,6 +3,8 @@
 Nom du scrum master du sprint : Clément
 
 ## Ce que nous avons fait durant ce sprint
+- mise en place des missions pour la base de donnée
+- recherche pour upload/download toujour en cours
 - 
 
 ## Ce que nous allons faire durant le prochain sprint
