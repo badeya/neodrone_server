@@ -37,7 +37,6 @@ public class AuthFilter implements ContainerRequestFilter {
             Utilisateur user = loadUserFromLogin(login);
             System.out.println("on de vrait avoir carl : " + user.getNom());
             if (user.isGoodPassword(password)) {
-                System.out.println("IS GOOOD PASSWORD");
             	logger.debug("good password !");
                 containerRequest.setSecurityContext(new AppSecurityContext(user, scheme));
             } else {
@@ -51,11 +50,7 @@ public class AuthFilter implements ContainerRequestFilter {
     private Utilisateur loadUserFromLogin(String login) {
         UtilisateurDAO dao = BDDFactory.getDbi().open(UtilisateurDAO.class);
         Utilisateur user = dao.findByMail(login);
-        if(user != null ) {
-        	System.out.println("CCCCCCCCCCCAAAAAAAAAAAAAAAARLE");
-        }
         if (user == null) {
-            System.out.println("ON EST LA ");
         	user = Utilisateur.getAnonymousUser();
         }
         return user;
