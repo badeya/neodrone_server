@@ -44,11 +44,21 @@ public class UtilisateurRessource {
 
         }
     }
-    
+    /*
     @GET
     @Path("/{nom}")
     public UtilisateurDTO getUser(@PathParam("nom") String nom) {
         Utilisateur user = dao.findById(nom);
+        if (user == null) {
+            throw new WebApplicationException(404);
+        }
+        return user.converToDTO();
+    }
+    */
+    @GET
+    @Path("/{email}")
+    public UtilisateurDTO getUser2(@PathParam("email") String email) {
+        Utilisateur user = dao.findByMail(email);
         if (user == null) {
             throw new WebApplicationException(404);
         }
