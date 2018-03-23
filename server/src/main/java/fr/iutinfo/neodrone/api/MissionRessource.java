@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -34,9 +35,9 @@ public class MissionRessource {
         if (!tableExist("mission")) {
             logger.debug("Crate table mission");
             dao.createMissionTable();
-            dao.insert(new Mission(1,"Debut","Jean"));
-            dao.insert(new Mission(2,"Fin","Carle"));
-            dao.insert(new Mission(3,"Debut","Carle"));
+            dao.insert(new Mission(1,"Debut","Jean@gmail.com","C'est la meilleur mission"));
+            dao.insert(new Mission(2,"Fin","Carle@free.fr","UNe mission incroyable"));
+            dao.insert(new Mission(3,"Debut","Carle@yahoo.fr","La pire mission lul"));
 
         }
     }
@@ -52,6 +53,15 @@ public class MissionRessource {
         	usersDTO.add(u.converToDTO());
         }
         return usersDTO;
+    }
+    
+    @POST
+    public MissionDTO createUser(MissionDTO dto) {
+        Mission user = new Mission();
+        user.initFromDto(dto);
+        int id = dao.insert(user);
+        dto.setId(id);
+        return dto;
     }
     
     

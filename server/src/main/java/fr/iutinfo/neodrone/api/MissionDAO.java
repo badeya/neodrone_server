@@ -5,7 +5,7 @@ import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 public interface MissionDAO {
-	@SqlUpdate("create table mission (id integer primary key autoincrement,etat varchar(100),client varchar(100))")
+	@SqlUpdate("create table mission (id integer primary key autoincrement,etat varchar(100),client varchar(100),description varchar(500))")
 	void createMissionTable();
 	
 	@SqlQuery("select * from mission where client = :nom")
@@ -13,7 +13,7 @@ public interface MissionDAO {
 	Mission findByName(@Bind("nom") String nom);
 
 	  
-	@SqlUpdate("insert into mission(etat,client) values (:etat,:client)")
+	@SqlUpdate("insert into mission(etat,client,description) values (:etat,:client,:description)")
     @GetGeneratedKeys
     int insert(@BindBean() Mission user);  
 	

@@ -9,19 +9,29 @@ public class Mission {
     private int id;
     private String etat;
     private String client;
+    private String description;
     
     public Mission() {
     	
     }
 
-	public Mission( int id, String etat, String client) {
+	public Mission( int id, String etat, String client, String description) {
 		super();
 
 		this.id = id;
 		this.etat = etat;
 		this.client=client;
+		this.description=description;
 	}
 
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getClient() {
 		return client;
@@ -56,7 +66,15 @@ public class Mission {
 		mission.setEtat(etat);
 		mission.setId(id);
 		mission.setClient(client);
+		mission.setDescription(description);
 		return mission;
 	}
+	
+    public void initFromDto(MissionDTO dto) {
+    	this.setClient(dto.getClient());
+    	this.setDescription(dto.getDescription());
+    	this.setEtat(dto.getEtat());
+    	this.setId(dto.getId());
+    }
 }
 
