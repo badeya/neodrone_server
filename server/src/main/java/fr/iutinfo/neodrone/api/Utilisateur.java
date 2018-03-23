@@ -11,7 +11,11 @@ import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 
 import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
-
+/**
+ *Représente les utilisateur enregistré sur le site web
+ *Un utilisateur peut être un Administrateur ou un Utilisateur 
+ *
+ */
 public class Utilisateur implements Principal  {
     final static Logger logger = LoggerFactory.getLogger(Utilisateur.class);
     private String nom;
@@ -48,6 +52,24 @@ public class Utilisateur implements Principal  {
         this.prenom = prenom;
         this.societe=societe;
     }
+    
+    public Utilisateur( int id ,String nom, String prenom, String role, String societe, String fonction, String ville,
+			String codep, String rue, String mobile, String fixe, String email, String password) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.role = role;
+		this.societe = societe;
+		this.fonction = fonction;
+		this.ville = ville;
+		this.codep = codep;
+		this.rue = rue;
+		this.mobile = mobile;
+		this.fixe = fixe;
+		this.id = id;
+		this.email = email;
+		this.password = password;
+	}
 
     public Utilisateur() {
     }
@@ -135,6 +157,10 @@ public class Utilisateur implements Principal  {
 		return logger;
 	}
 	
+	/**
+	 * Construit un UtilisateurDTO à partir de l'objet Utilisateur
+	 * @return l'utilisateur DTO construit
+	 */
 	public UtilisateurDTO converToDTO() {
 		UtilisateurDTO user = new UtilisateurDTO();
 		user.setNom(nom);
@@ -152,23 +178,7 @@ public class Utilisateur implements Principal  {
 		return user;
 	}
 
-	public Utilisateur( int id ,String nom, String prenom, String role, String societe, String fonction, String ville,
-			String codep, String rue, String mobile, String fixe, String email, String password) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.role = role;
-		this.societe = societe;
-		this.fonction = fonction;
-		this.ville = ville;
-		this.codep = codep;
-		this.rue = rue;
-		this.mobile = mobile;
-		this.fixe = fixe;
-		this.id = id;
-		this.email = email;
-		this.password = password;
-	}
+	
 	
 
 	public boolean isGoodPassword(String password) {
@@ -222,12 +232,15 @@ public class Utilisateur implements Principal  {
 	    public boolean isInUserGroup() {
 	        return !(id == anonymous.getId());
 	    }
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
+	
+	    public String getName() {
 		return nom;
 	}
 	
+	/**
+	 * Initialise l'objet Utilisateur à partir d'un objet UtilisateurDTO    
+	 * @param dto à partir duquel on doit initialiser
+	 */
     public void initFromDto(UtilisateurDTO dto) {
         this.setPrenom(dto.getPrenom());
         this.setEmail(dto.getEmail());
