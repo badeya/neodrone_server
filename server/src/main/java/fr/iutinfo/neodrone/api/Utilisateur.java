@@ -230,6 +230,7 @@ public class Utilisateur implements Principal  {
     public void initFromDto(UtilisateurDTO dto) {
         this.setPrenom(dto.getPrenom());
         this.setEmail(dto.getEmail());
+        this.setNom(dto.getNom());
         this.setId(dto.getId());
         this.setPassword(dto.getPassword());
         this.setCodep(dto.getCodep());
