@@ -73,7 +73,7 @@ public class UtilisateurRessource {
     	if (user == null) {
             throw new WebApplicationException(404);
         }
-    	user.initFromDto(dto);
+    	//user.initFromDto(dto);
     	dao.modifierProfil(user);
     	return dto;
     }
