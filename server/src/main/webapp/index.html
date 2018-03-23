@@ -17,7 +17,8 @@
 </head>
 <body>
 	<div id="output">
-		
+	
+	
 	<form id="formConnection" method="POST">
 			<label for="login">Mail :</label>
 			<input type="text" id="login" name="login">
@@ -28,14 +29,21 @@
 			<input type="submit" name="btnPassword" value="Se Connecter">
 		</form>
 		<p id="messageErreur" style='color:red;display:none;'>Erreur de saisie des identifiants</p>
-
-		
+	
 	
 	<!--
-	<p>Ajout d'un utilisateur :</p>
-	<form id="formAjoutUser" method="POST" style =>
+
+	  <p>Ajout d'un utilisateur :</p>
+	<form id="formAjoutUser" method="POST">
 			<label for="ajoutLogin">Mail :</label>
 			<input type="text" id="ajoutLogin">
+			</br>
+
+			<label for="ajoutRole">Rôle :</label>
+			<select id="ajoutRole">
+					<option value="admin">Administrateur</option>
+					<option value="client">Client</option>
+			</select>
 			</br>
 			<label for="ajoutPass">Mot de passe :</label>
 			<input type="text" id="ajoutPass" >
@@ -46,14 +54,14 @@
 			<label for="ajoutPrenom">Prenom :</label>
 			<input type="text" id="ajoutPrenom">
 			</br>
+			<label for="ajoutVille">Ville :</label>
+			<input type="text" id="ajoutVille">
+			</br>
 			<label for="ajoutCP">Code Postal :</label>
 			<input type="text" id="ajoutCP">
 			</br>
-			<label for="ajoutTelFixe">Telephone fixe :</label>
-			<input type="text" id="ajoutTelFixe">
-			</br>
-			<label for="ajoutTelPort">Telephone portable :</label>
-			<input type="text" id="ajoutTelPort">
+			<label for="ajoutRue">Rue :</label>
+			<input type="text" id="ajoutRue">
 			</br>
 			<label for="ajoutFonct">Fonction :</label>
 			<input type="text" id="ajoutFonct">
@@ -61,19 +69,141 @@
 			<label for="ajoutEnt">Entreprise :</label>
 			<input type="text" id="ajoutEnt">
 			</br>
-			<label for="ajoutRue">Rue :</label>
-			<input type="text" id="ajoutRue">
+			<label for="ajoutTelFixe">Téléphone fixe :</label>
+			<input type="text" id="ajoutTelFixe">
 			</br>
-			<input type="submit" id="btnAjout" value="Créer utilisateur">
+			<label for="ajoutTelPort">Téléphone portable :</label>
+			<input type="text" id="ajoutTelPort">
+			</br>
+			
+			
+			</br>
+			<input type="submit" id="btnAjout" value="Ajout utilisateur">
 		</form>
-	-->
-	</div>
+	
+
+
+
+	<form id="formAjoutMission" method="POST">
+			<label for="missionNom">Mission :</label>
+			<input type="text" id="missionNom">
+			</br>
+			<label for="missionClient">Mail client :</label>
+			<input type="text" id="missionClient">
+			</br>
+			<label for="missionDesc">Description :</label>
+			<textarea  id="missionDesc" form="formAjoutMission">Enter text here...</textarea>
+		</br>
+
+			<label for="missionEtat">Etat de la mission :</label>
+			<select id="missionEtat">
+					<option value="declaration">Déclaration realisée</option>
+					<option value="Autorisation">Autorisation obtenue</option>
+					<option value="mission">Mission réalisée</option>
+					<option value="travail">Travail photo</option>
+					<option value="fichiers">Fichiers disponibles</option>
+					
+			</select>
+			<input type="submit" id="btnMission" value="Ajout mission">
+	</form>
+-->
+<!--
+<form id="updateMission" method="POST">
+		
+		<label for="updateMissionNom">Nom de la mission :</label>
+		<select id="updateMissionNom">
+		</select>
+		</br>
+		<label for="updateDesc">Description :</label>
+		<textarea  id="updateDesc" form="formAjoutMission">Enter text here...</textarea>
+		</br>
+		<label for="missionEtat">Etat de la mission :</label>
+		<select id="missionEtat">
+				<option value="declaration">Déclaration realisée</option>
+				<option value="Autorisation">Autorisation obtenue</option>
+				<option value="mission">Mission réalisée</option>
+				<option value="travail">Travail photo</option>
+				<option value="fichiers">Fichiers disponibles</option>
+		</select>
+		</br>
+		<input type="submit" id="btnMissionUpdate" value="Update mission">
+
+</form>
+-->
+
+
+
+<p>Modif d'un utilisateur :</p>
+<form id="formUpdateUser" method="POST">
+		<label for="updateLogin">Mail :</label>
+		<input type="text" id="updateLogin">
+		</br>
+
+		
+		<label for="updatePass">Mot de passe :</label>
+		<input type="text" id="updatePass" >
+		</br>
+		<label for="updateNom">Nom :</label>
+		<input type="text" id="updateNom">
+		</br>
+		<label for="updatePrenom">Prenom :</label>
+		<input type="text" id="updatePrenom">
+		</br>
+		<label for="updateVille">Ville :</label>
+		<input type="text" id="updateVille">
+		</br>
+		<label for="updateCP">Code Postal :</label>
+		<input type="text" id="updateCP">
+		</br>
+		<label for="updateRue">Rue :</label>
+		<input type="text" id="updateRue">
+		</br>
+		<label for="updateFonct">Fonction :</label>
+		<input type="text" id="updateFonct">
+		</br>
+		<label for="updateEnt">Entreprise :</label>
+		<input type="text" id="updateEnt">
+		</br>
+		<label for="updateTelFixe">Téléphone fixe :</label>
+		<input type="text" id="updateTelFixe">
+		</br>
+		<label for="updateTelPort">Téléphone portable :</label>
+		<input type="text" id="updateTelPort">
+		</br>
+		
+		
+		</br>
+		<input type="submit" id="btnUpdateUser" value="Ajout utilisateur">
+	</form>
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
 
 	<script src='jquery-3.3.1.js'></script>
 	<script src='./js/lib.js'></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/css/bootstrap-treeview.css"> 
+    <link  rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://jonmiles.github.io/bootstrap-treeview/bower_components/jquery/dist/jquery.js"></script>
+    <script src="http://jonmiles.github.io/bootstrap-treeview/js/bootstrap-treeview.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link  rel="stylesheet" href="http://jonmiles.github.io/bootstrap-treeview/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="http://jonmiles.github.io/bootstrap-treeview/bower_components/jquery/dist/jquery.js"></script>
+  	<script src="http://jonmiles.github.io/bootstrap-treeview/js/bootstrap-treeview.js"></script>
+  
+
+
 
 </body>
 </html>
