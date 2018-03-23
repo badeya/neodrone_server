@@ -12,6 +12,7 @@ import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -63,6 +64,18 @@ public class UtilisateurRessource {
             throw new WebApplicationException(404);
         }
         return user.converToDTO();
+    }
+    
+    
+    @PUT
+    public UtilisateurDTO modifUser(UtilisateurDTO dto) {
+    	Utilisateur user = dao.findByMail(dto.getEmail());
+    	if (user == null) {
+            throw new WebApplicationException(404);
+        }
+    	user.initFromDto(dto);
+    	dao.modifierProfil(user);
+    	return dto;
     }
     
     
