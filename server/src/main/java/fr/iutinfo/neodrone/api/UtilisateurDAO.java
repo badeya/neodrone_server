@@ -36,8 +36,8 @@ public interface UtilisateurDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	String findMDPByMail(@Bind("email") String email);
 	
-	@SqlUpdate("update utilisateur set nom = :nom, prenom = :prenom, role = :role, societe = :societe, fonction = :fonction, ville = :ville, codep = :codep, rue = :rue, mobile = :mobile, fixe = :fixe, email = :email, password = :password where id = :id")
-	@RegisterMapperFactory(BeanMapperFactory.class)
+	@SqlUpdate("update utilisateur set nom = :nom, prenom = :prenom, role = :role, societe = :societe, fonction = :fonction, ville = :ville, codep = :codep, rue = :rue, mobile = :mobile, fixe = :fixe, email = :email, password = :password where email = :email")
+	@GetGeneratedKeys
 	int modifierProfil(@BindBean() Utilisateur user);
 
 }
