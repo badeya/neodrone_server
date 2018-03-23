@@ -1,0 +1,119 @@
+html {
+	font-family: "Segoe UI";
+	font-size: 16px;
+	color: #707070;
+}
+
+body {
+	margin: 20px;
+	background-color: #f7f7f7;
+}
+
+
+.sec {
+	padding: 1.5em;
+	margin-bottom: 1em;
+	background-color: #fff;
+}
+
+
+.sec.sec-select {
+	font-size: 2em;
+	text-align: center;
+	font-weight: 200;
+	padding: 1.5em 1em;
+	user-select: none;
+	cursor: default;
+
+	transition: all 200ms ease;
+}
+.sec.sec-select.dragenter {
+	box-shadow: inset 0 0 0 10px #23aeff;
+	background-color: rgba(35, 174, 255, 0.03);
+	border-radius: 2px;
+}
+
+#file {
+	display: none;
+}
+.btn {
+	display: inline-block;
+	background-color: #23aeff;
+	color: #fff;
+	font-size: 0.5em;
+	font-weight: normal;
+	padding: 0.7em 1.5em;
+	border-radius: 2px;
+
+	transition: all 200ms ease;
+	margin-top: 2em;
+}
+.btn:hover {
+	transform: scale(1.05);
+}
+.btn:active {
+	background-color: #2198de;
+	transform: scale(0.98);
+	transition: all 70ms ease;
+}
+
+
+#list {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+#list > li {
+	padding: 1em;
+
+	border-bottom: 1px solid #f0f0f0;
+	transition: all 150ms ease;
+
+	display: flex;
+}
+#list > li:hover {
+	background-color: #fafafa;
+	box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
+}
+#list > li > .thumb-wrapper {
+	width: 4.5em;
+	height: 4.5em;
+	display: flex;
+	align-items: center;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 3px;
+	border-radius: 2px;
+	background-color: #fafafa;
+	user-select: none;
+	cursor: default;
+}
+#list > li:hover > .thumb-wrapper {
+	background-color: #fff;
+}
+#list > li > .thumb-wrapper > img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	height: auto;
+	margin: auto;
+	min-width: 100%;
+}
+#list > li > .thumb-wrapper > .thumb-ext {
+	width: 100%;
+	text-align: center;
+	font-size: 1.4em;
+	color: #dbdbdb;
+}
+#list > li > .file-info {
+	padding-left: 1em;
+	display: inline-flex;
+	flex-direction: column;
+}
+#list > li > .file-info > div:first-child {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+#list > li > .file-info > div + div {
+	font-size: 0.9em;
+
+}
