@@ -33,7 +33,7 @@ function getWithAuthorizationHeader(url, callback) {
 function afficheUser(data) {
   if (data.id > -1) {
     console.log(data);
-    $("#output").html(makeProfil(data));
+    if (data.role == "client") $("#output").html(makeProfil(data));else if (data.role == "admin") $("#output").html(makeAdminProfil(data));
   } else {
     $("#messageErreur").show();
   }
@@ -128,15 +128,111 @@ function updateUser(url, nom, telport, telfixe, entreprise, fonction, rue, preno
   });
 }
 
+function makeAdminProfil(user) {
+  var html = "<h3>Bienvenue " + " dans votre espace admin :</h1>";
+  return html;
+}
+
 function makeProfil(user) {
-  var html = "<h3>Bienvenue " + " dans votre espace perso :</h1>";
+  var html = "<h3>Bienvenue dans votre espace perso :</h1>";
   //Ajout du tableau d'en tête (nom, prenom, logo neodrone, société, fonction)
   html += "<table border=\"0\" > <tr> <td> <h3>" + user.nom + "</h3></td> <td rowspan=\"2\"><a href=\"http://neodrone.fr\"><img src=\"res/logo.png\" alt=\"Logo neodrone\"></a></td> <td><h3>" + user.societe + "</h3></td> </tr><tr><td><h3>" + user.prenom + "</h3></td> <td><h3>" + user.fonction + "</h3></td></tr></table>";
   html += "<br>";
-  //Ajout du menu "à onglet"
-  html += "<ul class=\"nav nav-tabs\"> <li class=\"active\"><a data-toggle=\"tab\" href=\"#home\">Home</a></li><li><a data-toggle=\"tab\" href=\"#infos\">INFOS</a></li><li><a data-toggle=\"tab\" href=\"#files\">FILES</a></li></ul>";
-  html += "<div class=\"tab-content\"><div id=\"home\" class=\"tab-pane fade in active\"><h3>HOME</h3><p>BLABLABLA DU HOME</p></div><div id=\"infos\" class=\"tab-pane\"><h3>INFOS</h3><p>BLABLA DES INFOS</p></div><div id=\"files\" class=\"tab-pane fade\"><h3>FILES</h3><div class=\"container\"><div class=\"row\"><div class=\"col-sm-4\"><div id=\"treeview\" class=\"\"></div></div></div></div><script>var defaultData = [{text: \'mission1\',href: \'#parent1\',nodes: [{text: \'FILE 1\',href: \'#child1\', },{text: \'FILE 2\',href: \'#child2\',}]},{text: \'mission2\',href: \'#parent2\',nodes: [{text: \'FILE 1\',icon: \'glyphicon glyphicon-camera\',href: \'localhost:8080\',selectable: true,state: {checked: false,disabled: false,expanded: false,selected: false},},{text: \'FILE 2\',icon: \'glyphicon glyphicon-film\',href: \'http://www.google.fr\',selectable: true,state: {checked: false,disabled: false,expanded: false,selected: false},}]},{text: \'mission3\',href: \'#parent3\',},{text: \'mission4\',href: \'#parent4\',},{text: \'mission5\',href: \'#parent5\' ,}]; $('#treeview').treeview({ color: \"#000000\", data: defaultData,enableLinks: true});</script></div></div>";
+  //Ajout du menu "à onglet";
+  html += "<ul class=\"nav nav-tabs\">";
+  html += "<li class=\"active\">";
+  html += "<a data-toggle=\"tab\" href=\"#home\">Home</a></li>";
+  html += "<li><a data-toggle=\"tab\" href=\"#infos\">INFOS</a></li>";
+  html += "<li><a data-toggle=\"tab\" href=\"#files\">FILES</a></li></ul>";
+  html += "<div class=\"tab-content\"><div id=\"home\" class=\"tab-pane fade in active\">";
+  html += "<h3>HOME</h3>";
+  /**************************/
 
+  html += "<p>Modif d'un utilisateur :</p>";
+  html += "<form id=\"formUpdateUser\" method=\"POST\">";
+  html += "<label for=\"updateLogin\">Mail :</label>";
+  html += "<input type=\"text\" id=\"updateLogin\">";
+  html += "</br>";
+  html += "<label for=\"updatePass\">Mot de passe :</label>";
+  html += "<input type=\"text\" id=\"updatePass\" >";
+  html += "</br>";
+  html += "<label for=\"updateNom\">Nom :</label>";
+  html += "<input type=\"text\" id=\"updateNom\">";
+  html += "</br>";
+  html += "<label for=\"updatePrenom\">Prenom :</label>";
+  html += "<input type=\"text\" id=\"updatePrenom\">";
+  html += "</br>";
+  html += "<label for=\"updateVille\">Ville :</label>";
+  html += "<input type=\"text\" id=\"updateVille\">";
+  html += "</br>";
+  html += "<label for=\"updateCP\">Code Postal :</label>";
+  html += "<input type=\"text\" id=\"updateCP\">";
+  html += "</br>";
+  html += "<label for=\"updateRue\">Rue :</label>";
+  html += "<input type=\"text\" id=\"updateRue\">";
+  html += "</br>";
+  html += "<label for=\"updateFonct\">Fonction :</label>";
+  html += "<input type=\"text\" id=\"updateFonct\">";
+  html += "</br>";
+  html += "<label for=\"updateEnt\">Entreprise :</label>";
+  html += "<input type=\"text\" id=\"updateEnt\">";
+  html += "</br>";
+  html += "<label for=\"updateTelFixe\"\>Téléphone fixe :</label>";
+  html += "<input type=\"text\" id=\"updateTelFixe\">";
+  html += "</br>";
+  html += "<label for=\"updateTelPort\">Téléphone portable :</label>";
+  html += "<input type=\"text\" id=\"updateTelPort\">";
+  html += "</br>";
+  html += "</br>";
+  html += "<input type=\"submit\" id=\"btnUpdateUser\" value=\"Update utilisateur\">";
+  html += "</form>";
+
+  /********************/
+
+  html += "<div id=\"infos\" class=\"tab-pane\">";
+  html += "<h3>INFOS</h3><p>BLABLA DES INFOS</p></div>";
+  html += "<div id=\"files\" class=\"tab-pane fade\">";
+  html += "<h3>FILES</h3>";
+  html += "<div class=\"container\">";
+  html += "<div class=\"row\"><div class=\"col-sm-4\"><div id=\"treeview\" class=\"\"></div></div></div></div>";
+  html += "<script>";
+  html += "var defaultData = [{";
+  html += "text: \'mission1\',";
+  html += "href: \'#parent1\',";
+  html += "nodes: [{";
+  html += "text: \'FILE 1\',";
+  html += "href: \'#child1\', },";
+  html += "{text: \'FILE 2\',";
+  html += "href: \'#child2\',}]},";
+  html += "{text: \'mission2\',";
+  html += "href: \'#parent2\',";
+  html += "nodes: [{text: \'FILE 1\',";
+  html += "icon: \'glyphicon glyphicon-camera\',";
+  html += "href: \'localhost:8080\',";
+  html += "selectable: true,";
+  html += "state: {";
+  html += "checked: false,";
+  html += "disabled: false,";
+  html += "expanded: false,";
+  html += "selected: false},},";
+  html += "{text: \'FILE 2\',";
+  html += "icon: \'glyphicon glyphicon-film\',";
+  html += "href: \'http://www.google.fr\',";
+  html += "selectable: true,";
+  html += "state: {";
+  html += "checked: false,";
+  html += "disabled: false,";
+  html += "expanded: false,";
+  html += "selected: false},}]},";
+  html += "{text: \'mission3\',";
+  html += "href: \'#parent3\',},";
+  html += "{text: \'mission4\',";
+  html += "href: \'#parent4\',},";
+  html += "{text: \'mission5\',";
+  html += "href: \'#parent5\' ,}];";
+  html += "$('#treeview').treeview({";
+  html += " color: \"#000000\",";
+  html += " data: defaultData,enableLinks: true});</script></div></div>";
   return html;
 }
 
@@ -155,13 +251,11 @@ $("#formAjoutUser").submit(function (event) {
   if ($("#ajoutLogin").val() != "" && $("#ajoutPass").val() != "") {
     postUser("/test/utilisateur/", $("#ajoutNom").val(), $("#ajoutTelPort").val(), $("#ajoutTelFixe").val(), $("#ajoutEnt").val(), $("#ajoutFonct").val(), $("#ajoutRue").val(), $("#ajoutPrenom").val(), $("#ajoutCP").val(), $("#ajoutVille").val(), $("#ajoutLogin").val(), $("#ajoutPass").val(), $("#ajoutRole").val());
   }
-
-  //console.log($("#ajoutRole").val());
 });
 
 $("#formUpdateUser").submit(function (event) {
   event.preventDefault();
-  updateUser("/test/utilisateur", $("#updateNom").val(), $("#updateTelPort").val(), $("#updateTelFixe").val(), $("#updateEnt").val(), $("#updateFonct").val(), $("#updateRue").val(), $("#updatePrenom").val(), $("#updateCP").val(), $("#updateVille").val(), $("#updateLogin").val(), $("#updatePass").val());
+  updateUser("/test/utilisateur/", $("#updateNom").val(), $("#updateTelPort").val(), $("#updateTelFixe").val(), $("#updateEnt").val(), $("#updateFonct").val(), $("#updateRue").val(), $("#updatePrenom").val(), $("#updateCP").val(), $("#updateVille").val(), $("#updateLogin").val(), $("#updatePass").val());
 });
 
 $("#formAjoutMission").submit(function (event) {
@@ -170,8 +264,3 @@ $("#formAjoutMission").submit(function (event) {
     postMission("/test/mission/", $("#missionClient").val(), $("#missionNom").val(), $("#missionDesc").val(), $("#missionEtat").val());
   }
 });
-
-function ajoutUtilisateur() {
-  //TODO afficher un message apres l'ajout d'une personne en base
-  console.log("ajout utilisateur fait");
-}
