@@ -17,8 +17,15 @@ public class UtilisateurDTO {
     private String fixe;
     private int id;
     private String email;
+    private String password;
     
-    public String getRole() {
+    public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {

@@ -226,5 +226,27 @@ public class Utilisateur implements Principal  {
 		// TODO Auto-generated method stub
 		return nom;
 	}
+	
+    public void initFromDto(UtilisateurDTO dto) {
+        this.setPrenom(dto.getPrenom());
+        this.setEmail(dto.getEmail());
+        this.setId(dto.getId());
+        this.setPassword(dto.getPassword());
+        this.setCodep(dto.getCodep());
+        this.setEmail(dto.getEmail());
+        this.setFixe(dto.getFixe());
+        this.setFonction(dto.getFonction());
+        this.setMobile(dto.getMobile());
+        this.setVille(dto.getVille());
+        this.setSociete(dto.getSociete());
+        this.setRue(dto.getRue());
+        this.setRole(dto.getRole());
+    }
+    
+    public void resetPasswordHash() {
+        if (password != null && !password.isEmpty()) {
+            setPassword(getPassword());
+        }
+    }
     
 }	

@@ -55,14 +55,26 @@ public class UtilisateurRessource {
         return user.converToDTO();
     }
     
+    
     @POST
-    //@RolesAllowed({"admin"})
+    public UtilisateurDTO createUser(UtilisateurDTO dto) {
+        Utilisateur user = new Utilisateur();
+        user.initFromDto(dto);
+        user.resetPasswordHash();
+        int id = dao.insert(user);
+        dto.setId(id);
+        return dto;
+    }
+    
+    /*
+    @POST
+    @RolesAllowed({"admin"})
     @Path("/insertion")
     public void postUser(@PathParam("nom") String nom ,@PathParam("prenom") String prenom,@PathParam("role") String role,@PathParam("societe") String societe ,@PathParam("fonction") String fonction,@PathParam("ville") String ville,@PathParam("codep") String codep,@PathParam("rue") String rue,@PathParam("mobile") String mobile,@PathParam("fixe") String fixe,@PathParam("email") String email,@PathParam("password") String password)
     {
     	 dao.insert(new Utilisateur(1,nom,prenom,role,societe,fonction,ville,codep,rue,mobile,fixe,email,password));
 
-    }
+    }*/
     /*
     @GET
     @Path("/{id}")
