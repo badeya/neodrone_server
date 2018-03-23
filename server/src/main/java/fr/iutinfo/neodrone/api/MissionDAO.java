@@ -20,4 +20,9 @@ public interface MissionDAO {
 	@SqlQuery("select * from mission order by id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Mission> all();
+	
+	@SqlUpdate("update mission set etat = :etat, client = :client, description = :description, mission = :mission where id = :id")
+    @GetGeneratedKeys
+    int modifierMission(@BindBean() Mission mission);
+	
 }
