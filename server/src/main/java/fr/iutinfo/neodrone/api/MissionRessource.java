@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -53,6 +54,17 @@ public class MissionRessource {
         	usersDTO.add(u.converToDTO());
         }
         return usersDTO;
+    }
+    
+    @PUT
+    public MissionDTO modifMission(MissionDTO dto) {
+    	Mission user = dao.findByName(dto.getClient());
+    	if (user == null) {
+            throw new WebApplicationException(404);
+        }
+    	user.initFromDto(dto);
+    	dao.modifierMission(user);
+    	return dto;
     }
     
     @POST

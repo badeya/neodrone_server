@@ -148,6 +148,7 @@ public class Utilisateur implements Principal  {
 		user.setMobile(mobile);
 		user.setRue(rue);
 		user.setSociete(societe);
+		user.setVille(ville);
 		return user;
 	}
 
