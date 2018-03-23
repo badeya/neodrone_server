@@ -56,7 +56,7 @@ public class MissionRessource {
     }
     
     @POST
-    public MissionDTO createUser(MissionDTO dto) {
+    public MissionDTO createMission(MissionDTO dto) {
         Mission user = new Mission();
         user.initFromDto(dto);
         int id = dao.insert(user);
