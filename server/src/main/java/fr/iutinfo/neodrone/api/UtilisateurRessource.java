@@ -70,15 +70,17 @@ public class UtilisateurRessource {
     @PUT
     public UtilisateurDTO modifUser(UtilisateurDTO dto) {
     	Utilisateur user = dao.findByMail(dto.getEmail());
+    	System.out.println("EMAIL DE LUTILISATEUR2 :" + user.getEmail());
     	System.out.println("EMAIL DE LUTILISATEUR :" + dto.getEmail());
     	System.out.println("EMAIL DE LUTILISATEUR :" + dto.getEmail());
-    	System.out.println("EMAIL DE LUTILISATEUR :" + dto.getEmail());
-    	System.out.println("EMAIL DE LUTILISATEUR :" + dto.getEmail());
+    	System.out.println("EMAIL DE LUTILISATEUR :" + dto.getNom());
+    	System.out.println("EMAIL DE LUTILISATEUR2 :" + user.getNom());
     	if (user == null) {
             throw new WebApplicationException(404);
         }
     	user.initFromDto(dto);
     	dao.modifierProfil(user);
+    	System.out.println("EMAIL DE LUTILISATEUR3 :" + user.getNom());
     	return dto;
     }
     

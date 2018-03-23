@@ -21,7 +21,7 @@ public interface MissionDAO {
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Mission> all();
 	
-	@SqlUpdate("update mission set etat = :etat, client = :client, description = :description, mission = :mission where id = :id")
+	@SqlUpdate("update mission set etat = :etat, client = :client, description = :description, mission = :mission where email = :email")
     @GetGeneratedKeys
     int modifierMission(@BindBean() Mission mission);
 	
