@@ -1,6 +1,6 @@
 java:
-  image: badeya/neodrone_serveur
+  image: badeya/neodrone_server
   ports:
-  - ip: A.X.Y.Z
+  - ip: 37.59.171.5 
     container_port: 8080
     host_port: 80

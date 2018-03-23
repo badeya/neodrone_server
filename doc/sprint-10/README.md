@@ -1,6 +1,6 @@
 # Rétrospective de sprint
 
-Nom du scrum master du sprint : Clément
+Nom du scrum master du sprint : simon
 
 ## Ce que nous avons fait durant ce sprint
 - mise en place du docker
