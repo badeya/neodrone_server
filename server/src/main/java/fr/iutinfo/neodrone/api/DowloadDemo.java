@@ -11,9 +11,14 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/")
 public class DowloadDemo {
-
-	private static final String FILE_PATH = "/home/infoetu/badeya/nedrone/neodrone_serveur/server/src/main/webapp"
-			+ "/dowload/videotest.mp4";
+	
+	File f1 = new File("../../../../../webapp/dowload/videotest.mp4");
+	private final String FILE_PATH = f1.getPath();
+	
+	
+	String localDir = System.getProperty("user.dir");
+	private final String FILE_PATH3 = new File(localDir+"/src/main/webapp/dowload/videotest.mp4").getPath();
+			
 	private static final String FILE_PATH2 = "/tmp/DJI_0137.MOV";
 
 	@GET
@@ -21,7 +26,7 @@ public class DowloadDemo {
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
 	public Response getFile() {
 
-		File file = new File(FILE_PATH);
+		File file = new File(FILE_PATH3);
 
 		ResponseBuilder response = Response.ok((Object) file);
 		response.header("Content-Disposition", "attachment; filename="+file.getName());

@@ -1,18 +1,18 @@
 # Rétrospective de sprint
 
-Nom du scrum master du sprint : simon
+Nom du scrum master du sprint : Clément 
 
 ## Ce que nous avons fait durant ce sprint
-- mise en place du docker
-- modification d'une mission
-- formulaire modification client
+- docker fonctionel
+- connexion à l'application fini
+- modification des utilisateurs depuis un formulaire
+-
 
 
 ## Ce que nous allons faire durant le prochain sprint
-- finir la mise en place du docker
-- upload plusieurs fichier en méme temps
-- faire fonctioner la mofification des utilisateur
-- implémentation du js dans le serveur
+- android modifier le profil
+- integration du formulaire de modification dans le profil client
+- integration du formulaire de cration de nouveau clients
 
 
 
@@ -21,11 +21,11 @@ Nom du scrum master du sprint : simon
 	preparer la démo
     
 ### Qu'avons nous observé ? 
-    pas encore assez préparer 
+    y'a du mieux
 
 
 ### Quelle décision prenons nous suite à cette expérience ? 
-    prendre 15 minutes avant la démo pour tout préparer
+    prendre 20 minutes avant la démo pour tout préparer
 
 ### À quoi verra-t-on que celà à fonctionné ?
 	plus de problèmes lors des démos
