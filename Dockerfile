@@ -6,10 +6,10 @@ run apt-get update \
     && apt-get clean
 #run mvn install
 run rm -rf /var/lib/jetty9/webapps/root
-add . /srv/jersey-skeleton/
-workdir /srv/jersey-skeleton/
+add . /srv/neodrone_serveur/
+workdir /srv/neodrone_serveur/
 run mvn install
-run cp /srv/jersey-skeleton/war/target/war-1.0-SNAPSHOT.war /var/lib/jetty9/webapps/root.war
+run cp /srv/neodrone_serveur/war/target/war-1.0-SNAPSHOT.war /var/lib/jetty9/webapps/root.war
 expose 8080
-workdir /srv/jersey-skeleton/server
+workdir /srv/neodrone_serveur/server
 cmd mvn jetty:run

@@ -1,5 +1,5 @@
 java:
-  image: tclavier/jersey-skeleton
+  image: badeya/neodrone_serveur
   ports:
   - ip: A.X.Y.Z
     container_port: 8080
