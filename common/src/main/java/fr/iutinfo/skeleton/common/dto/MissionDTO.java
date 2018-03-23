@@ -9,7 +9,14 @@ public class MissionDTO {
     private String etat;
     private String client;
     private String description;
+    private String mission;
     
+	public String getMission() {
+		return mission;
+	}
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
 	public String getClient() {
 		return client;
 	}

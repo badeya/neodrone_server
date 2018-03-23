@@ -10,20 +10,30 @@ public class Mission {
     private String etat;
     private String client;
     private String description;
+    private String mission;
     
     public Mission() {
     	
     }
 
-	public Mission( int id, String etat, String client, String description) {
+	public Mission( int id, String etat, String client, String description, String mission) {
 		super();
 
 		this.id = id;
 		this.etat = etat;
 		this.client=client;
 		this.description=description;
+		this.mission=mission;
 	}
 
+
+	public String getMission() {
+		return mission;
+	}
+
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
 
 	public String getDescription() {
 		return description;
@@ -62,15 +72,17 @@ public class Mission {
 	}
 	
 	public MissionDTO converToDTO() {
-		MissionDTO mission = new MissionDTO();
-		mission.setEtat(etat);
-		mission.setId(id);
-		mission.setClient(client);
-		mission.setDescription(description);
-		return mission;
+		MissionDTO mission1 = new MissionDTO();
+		mission1.setEtat(etat);
+		mission1.setId(id);
+		mission1.setClient(client);
+		mission1.setDescription(description);
+		mission1.setMission((mission));
+		return mission1;
 	}
 	
     public void initFromDto(MissionDTO dto) {
+    	this.setMission(dto.getMission());
     	this.setClient(dto.getClient());
     	this.setDescription(dto.getDescription());
     	this.setEtat(dto.getEtat());
