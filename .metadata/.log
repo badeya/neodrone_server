@@ -360,3 +360,19 @@ Caused by: java.io.IOException: Eclipse Git access blocked: http://git.eclipse.o
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
 	... 12 more
+
+!ENTRY org.eclipse.osgi 4 0 2018-03-26 09:53:55.152
+!MESSAGE Unable to extract content: osgi.identity; osgi.identity="org.eclipse.wst.xml.ui"; type="osgi.bundle"; version:Version="1.1.800.v201704102213"; singleton:="true": icons/full/obj16/proinst_obj.gif
+!STACK 0
+java.io.IOException: The directory "/home/infoetu/sengesc/.eclipse/org.eclipse.platform_4.7.0_1473617060_linux_gtk_x86_64/configuration/org.eclipse.osgi/940/0/.cp/icons/full/obj16" could not be created
+	at org.eclipse.osgi.storage.BundleInfo$Generation.storeContent(BundleInfo.java:283)
+	at org.eclipse.osgi.storage.bundlefile.ZipBundleFile.getFile(ZipBundleFile.java:194)
+	at org.eclipse.osgi.storage.bundlefile.ZipBundleEntry.getFileURL(ZipBundleEntry.java:109)
+	at org.eclipse.osgi.storage.url.BundleURLConnection.getFileURL(BundleURLConnection.java:129)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.toFileURL(BundleURLConverter.java:34)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:207)
+	at org.eclipse.jface.resource.URLImageDescriptor.getFilePath(URLImageDescriptor.java:230)
+	at org.eclipse.jface.resource.URLImageDescriptor.access$2(URLImageDescriptor.java:218)
+	at org.eclipse.jface.resource.URLImageDescriptor$URLImageFileNameProvider.getImagePath(URLImageDescriptor.java:54)
+	at org.eclipse.swt.internal.DPIUtil.validateAndGetImagePathAtZoom(DPIUtil.java:408)
+	at org.eclipse.swt.graphics.Imag

@@ -76,7 +76,6 @@ INDEX VERSION 1.130+/home/infoetu/sengesc/neodrone/neodrone_serveur/.metadata/.p
 3125931117.index
 2580785110.index
 461109768.index
-1724106006.index
 1296716314.index
 3737129703.index
 556496020.index
@@ -89,5 +88,4 @@ INDEX VERSION 1.130+/home/infoetu/sengesc/neodrone/neodrone_serveur/.metadata/.p
 3739779289.index
 1294492498.index
 223004701.index
-1166096797.index
 3430373519.index
