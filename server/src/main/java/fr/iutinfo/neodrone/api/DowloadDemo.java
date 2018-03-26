@@ -12,14 +12,12 @@ import javax.ws.rs.core.MediaType;
 @Path("/")
 public class DowloadDemo {
 	
-	File f1 = new File("../../../../../webapp/dowload/videotest.mp4");
-	private final String FILE_PATH = f1.getPath();
-	
+		
 	
 	String localDir = System.getProperty("user.dir");
 	private final String FILE_PATH3 = new File(localDir+"/src/main/webapp/dowload/videotest.mp4").getPath();
 			
-	private static final String FILE_PATH2 = "/tmp/DJI_0137.MOV";
+	
 
 	@GET
 	@Path("/download")
@@ -34,5 +32,9 @@ public class DowloadDemo {
 
 		
 	}
+	
+	
+	
+	
 
 }
