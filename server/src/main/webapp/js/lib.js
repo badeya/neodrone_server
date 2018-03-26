@@ -1,5 +1,7 @@
 "use strict";
 
+var aa = 78;
+
 $("#formConnection").submit(function (event) {
     // des qu'il y a un event appeler la ligne suivante
     event.preventDefault();
@@ -30,15 +32,40 @@ function getWithAuthorizationHeader(url, callback) {
     }
 }
 
+function loadAdminFunction() {
+    $("#formAjoutMission").submit(function (event) {
+        event.preventDefault();
+        if ($("#missionNom").val() != "") {
+            postMission("/test/mission/", $("#missionClient").val(), $("#missionNom").val(), $("#missionDesc").val(), $("#missionEtat").val());
+        }
+    });
+
+    $("#formAjoutUser").submit(function (event) {
+        event.preventDefault();
+        if ($("#ajoutLogin").val() != "" && $("#ajoutPass").val() != "") {
+            postUser("/test/utilisateur/", $("#ajoutNom").val(), $("#ajoutTelPort").val(), $("#ajoutTelFixe").val(), $("#ajoutEnt").val(), $("#ajoutFonct").val(), $("#ajoutRue").val(), $("#ajoutPrenom").val(), $("#ajoutCP").val(), $("#ajoutVille").val(), $("#ajoutLogin").val(), $("#ajoutPass").val(), $("#ajoutRole").val());
+        }
+    });
+}
+
+function loadClientFunction() {
+    $("#formUpdateUser").submit(function (event) {
+        event.preventDefault();
+        updateUser("/test/utilisateur/", $("#updateNom").val(), $("#updateTelPort").val(), $("#updateTelFixe").val(), $("#updateEnt").val(), $("#updateFonct").val(), $("#updateRue").val(), $("#updatePrenom").val(), $("#updateCP").val(), $("#updateVille").val(), $("#mailClient").val(), $("#updatePass").val());
+    });
+}
+
 function afficheUser(data) {
     if (data.id > -1) {
         console.log(data);
         if (data.role == "client") {
             $("#output").html(makeProfil(data));
             initFiles();
+            loadClientFunction();
         } else if (data.role == "admin") {
             $("#output").html(makeAdminProfil(data));
             initFiles();
+            loadAdminFunction();
         }
     } else {
         $("#messageErreur").show();
@@ -46,8 +73,7 @@ function afficheUser(data) {
 }
 
 function makeAjoutMissionMessage() {
-    var txt2 = $("<p id='newP'></p>").text("Ajout Mission Réussi");
-    $("#output").append(txt2);
+    console.log("ajout de mission reussi");
 }
 
 function postMission(url, email, mission, description, etat) {
@@ -135,12 +161,16 @@ function updateUser(url, nom, telport, telfixe, entreprise, fonction, rue, preno
 }
 
 function makeAdminProfil(user) {
-    var html = "<h3>Bienvenue dans votre espace admin :</h1>";
+    var html = "\n    <h3>Bienvenue dans votre espace administration :</h1>\n    <!--Ajout du tableau d'en t\xEAte (nom, prenom, logo neodrone, soci\xE9t\xE9, fonction)-->\n    <table border=\"0\" > \n        <tr> \n            <td> \n                <h3>" + user.nom + "</h3>\n            </td> \n            <td rowspan=\"2\">\n                <a href=\"http://neodrone.fr\"><img src=\"res/logo.png\" alt=\"Logo neodrone\"></a>\n            </td> \n            <td>\n                <h3> " + user.societe + " </h3>\n            </td> \n        </tr>\n        <tr>\n            <td>\n                <h3>" + user.prenom + "</h3>\n            </td> \n            <td>\n                <h3>" + user.fonction + "</h3>\n            </td>\n        </tr>\n    </table>\n    <br>\n   <!-->Ajout du menu \"\xE0 onglet-->\n    <ul class=\"nav nav-tabs\">\n        <li class=\"active\">\n            <a data-toggle=\"tab\" href=\"#home\">Clients</a>\n        </li>\n        <li>\n            <a data-toggle=\"tab\" href=\"#infos\">Missions</a>\n        </li>\n        <li>\n            <a data-toggle=\"tab\" href=\"#files\">Fichiers</a>\n        </li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"home\" class=\"tab-pane fade in active\">\n            <h3>Gestion clients</h3>\n            <p>Ajout d'un utilisateur :</p>\n            <form id=\"formAjoutUser\" method=\"POST\">\n                    <label for=\"ajoutLogin\">Mail :</label>\n                    <input type=\"text\" id=\"ajoutLogin\">\n                    </br>\n                    <label for=\"ajoutRole\">R\xF4le :</label>\n                    <select id=\"ajoutRole\">\n                            <option value=\"admin\">Administrateur</option>\n                            <option value=\"client\">Client</option>\n                    </select>\n                    </br>\n                    <label for=\"ajoutPass\">Mot de passe :</label>\n                    <input type=\"text\" id=\"ajoutPass\" >\n                    </br>\n                    <label for=\"ajoutNom\">Nom :</label>\n                    <input type=\"text\" id=\"ajoutNom\">\n                    </br>\n                    <label for=\"ajoutPrenom\">Prenom :</label>\n                    <input type=\"text\" id=\"ajoutPrenom\">\n                    </br>\n                    <label for=\"ajoutVille\">Ville :</label>\n                    <input type=\"text\" id=\"ajoutVille\">\n                    </br>\n                    <label for=\"ajoutCP\">Code Postal :</label>\n                    <input type=\"text\" id=\"ajoutCP\">\n                    </br>\n                    <label for=\"ajoutRue\">Rue :</label>\n                    <input type=\"text\" id=\"ajoutRue\">\n                    </br>\n                    <label for=\"ajoutFonct\">Fonction :</label>\n                    <input type=\"text\" id=\"ajoutFonct\">\n                    </br>\n                    <label for=\"ajoutEnt\">Entreprise :</label>\n                    <input type=\"text\" id=\"ajoutEnt\">\n                    </br>\n                    <label for=\"ajoutTelFixe\">T\xE9l\xE9phone fixe :</label>\n                    <input type=\"text\" id=\"ajoutTelFixe\">\n                    </br>\n                    <label for=\"ajoutTelPort\">T\xE9l\xE9phone portable :</label>\n                    <input type=\"text\" id=\"ajoutTelPort\">\n                    </br>\n                    \n                    \n                    </br>\n                    <input type=\"submit\" id=\"btnAjout\" value=\"Ajout utilisateur\">\n                </form>\n        </div>\n      \n  \n  \n  \n    <div id=\"infos\" class=\"tab-pane\">\n        <h3>Missions</h3>\n        <p>Ajout d'une mission :</p>\n        <form id=\"formAjoutMission\" method=\"POST\">\n\t\t\t<label for=\"missionNom\">Mission :</label>\n\t\t\t<input type=\"text\" id=\"missionNom\">\n\t\t\t</br>\n\t\t\t<label for=\"missionClient\">Mail client :</label>\n\t\t\t<input type=\"text\" id=\"missionClient\">\n\t\t\t</br>\n\t\t\t<label for=\"missionDesc\">Description :</label>\n\t\t\t<textarea  id=\"missionDesc\" form=\"formAjoutMission\">Enter text here...</textarea>\n\t\t</br>\n\n\t\t\t<label for=\"missionEtat\">Etat de la mission :</label>\n\t\t\t<select id=\"missionEtat\">\n\t\t\t\t\t<option value=\"declaration\">D\xE9claration realis\xE9e</option>\n\t\t\t\t\t<option value=\"Autorisation\">Autorisation obtenue</option>\n\t\t\t\t\t<option value=\"mission\">Mission r\xE9alis\xE9e</option>\n\t\t\t\t\t<option value=\"travail\">Travail photo</option>\n\t\t\t\t\t<option value=\"fichiers\">Fichiers disponibles</option>\n\t\t\t\t\t\n\t\t\t</select>\n\t\t\t<input type=\"submit\" id=\"btnMission\" value=\"Ajout mission\">\n\t</form>\n    </div>\n    \n    \n    \n    <div id=\"files\" class=\"tab-pane fade\">                        \n        <h3>FILES</h3>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-4\">\n                    <div id=\"treeview\" class=\"\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>";
     return html;
 }
 
+$('#listeMission').on('change', function () {
+    //alert(this.value);
+});
+
 function makeProfil(user) {
-    var html = "\n  <h3>Bienvenue dans votre espace perso :</h1>\n    <table border=\"0\" > \n      <tr> \n          <td> \n              <h3>" + user.nom + "</h3>\n          </td> \n          <td rowspan=\"2\">\n              <a href=\"http://neodrone.fr\"><img src=\"res/logo.png\" alt=\"Logo neodrone\"></a>\n          </td> \n          <td>\n              <h3> " + user.societe + " </h3>\n          </td> \n      </tr>\n      <tr>\n          <td>\n              <h3>" + user.prenom + "</h3>\n          </td> \n          <td>\n              <h3>" + user.fonction + "</h3>\n          </td>\n      </tr>\n  </table>\n  <br>\n   <ul class=\"nav nav-tabs\">\n      <li class=\"active\">\n          <a data-toggle=\"tab\" href=\"#home\">Mon compte</a>\n      </li>\n      <li>\n          <a data-toggle=\"tab\" href=\"#infos\">Mes missions</a>\n      </li>\n      <li>\n          <a data-toggle=\"tab\" href=\"#files\">Mes fichiers</a>\n      </li>\n  </ul>\n  <div class=\"tab-content\">\n      <div id=\"home\" class=\"tab-pane fade in active\">\n          <h3>HOME</h3>\n          <p>Modif d'un utilisateur :</p>\n          <form id=\"formUpdateUser\" method=\"POST\">\n              <label for=\"updateLogin\">Mail :</label>\n              <input type=\"text\" id=\"updateLogin\">\n              </br>\n              <label for=\"updatePass\">Mot de passe :</label>\"\n              <input type=\"text\" id=\"updatePass\" >\n              </br>\n              <label for=\"updateNom\">Nom :</label>\n              <input type=\"text\" id=\"updateNom\">\n              </br>\n              <label for=\"updatePrenom\">Prenom :</label>\n              <input type=\"text\" id=\"updatePrenom\">\n              </br>\n              <label for=\"updateVille\">Ville :</label>\n              <input type=\"text\" id=\"updateVille\">\n              </br>\n              <label for=\"updateCP\">Code Postal :</label>\n              <input type=\"text\" id=\"updateCP\">\n              </br>\n              <label for=\"updateRue\">Rue :</label>\n              <input type=\"text\" id=\"updateRue\">\n              </br>\n              <label for=\"updateFonct\">Fonction :</label>\n              <input type=\"text\" id=\"updateFonct\">\n              </br>\n              <label for=\"updateEnt\">Entreprise :</label>\n              <input type=\"text\" id=\"updateEnt\">\n              </br>\n              <label for=\"updateTelFixe\">T\xE9l\xE9phone fixe :</label>\n              <input type=\"text\" id=\"updateTelFixe\">\n              </br>\n              <label for=\"updateTelPort\">T\xE9l\xE9phone portable :</label>\n              <input type=\"text\" id=\"updateTelPort\">\n              </br>\n              </br>\n              <input type=\"submit\" id=\"btnUpdateUser\" value=\"Update utilisateur\">\n          </form>\n      </div>\n    \n\n\n\n  <div id=\"infos\" class=\"tab-pane\">\n      <h3>INFOS</h3>\n      <p>BLABLA DES INFOS</p>\n  </div>\n  \n  \n  \n  <div id=\"files\" class=\"tab-pane fade\">                        \n      <h3>FILES</h3>\n      <div class=\"container\">\n          <div class=\"row\">\n              <div class=\"col-sm-4\">\n                  <div id=\"treeview\" class=\"\">\n                  </div>\n              </div>\n          </div>\n      </div>\n  </div>";
+    var html = "\n  <h3>Bienvenue dans votre espace perso :</h1>\n  <!--Ajout du tableau d'en t\xEAte (nom, prenom, logo neodrone, soci\xE9t\xE9, fonction)-->\n  <table border=\"0\" > \n      <tr> \n          <td> \n              <h3>" + user.nom + "</h3>\n          </td> \n          <td rowspan=\"2\">\n              <a href=\"http://neodrone.fr\"><img src=\"res/logo.png\" alt=\"Logo neodrone\"></a>\n          </td> \n          <td>\n              <h3> " + user.societe + " </h3>\n          </td> \n      </tr>\n      <tr>\n          <td>\n              <h3>" + user.prenom + "</h3>\n          </td> \n          <td>\n              <h3>" + user.fonction + "</h3>\n          </td>\n      </tr>\n  </table>\n  <br>\n <!-->Ajout du menu \"\xE0 onglet-->\n  <ul class=\"nav nav-tabs\">\n      <li class=\"active\">\n          <a data-toggle=\"tab\" href=\"#home\">Mon compte</a>\n      </li>\n      <li>\n          <a data-toggle=\"tab\" href=\"#infos\">Mes missions</a>\n      </li>\n      <li>\n          <a data-toggle=\"tab\" href=\"#files\">Mes fichiers</a>\n      </li>\n  </ul>\n  <div class=\"tab-content\">\n      <div id=\"home\" class=\"tab-pane fade in active\">\n          <h3>HOME</h3>\n          <p>Modif d'un utilisateur :</p>\n          <form id=\"formUpdateUser\" method=\"POST\">\n             <p>Mon mail :</p><p id=\"mailClient\">" + user.email + "</>\n              </br>\n              <label for=\"updatePass\">Mot de passe :</label>\n              <input type=\"text\" id=\"updatePass\" >\n              </br>\n              <label for=\"updateNom\">Nom :</label>\n              <input type=\"text\" id=\"updateNom\">\n              </br>\n              <label for=\"updatePrenom\">Prenom :</label>\n              <input type=\"text\" id=\"updatePrenom\">\n              </br>\n              <label for=\"updateVille\">Ville :</label>\n              <input type=\"text\" id=\"updateVille\">\n              </br>\n              <label for=\"updateCP\">Code Postal :</label>\n              <input type=\"text\" id=\"updateCP\">\n              </br>\n              <label for=\"updateRue\">Rue :</label>\n              <input type=\"text\" id=\"updateRue\">\n              </br>\n              <label for=\"updateFonct\">Fonction :</label>\n              <input type=\"text\" id=\"updateFonct\">\n              </br>\n              <label for=\"updateEnt\">Entreprise :</label>\n              <input type=\"text\" id=\"updateEnt\">\n              </br>\n              <label for=\"updateTelFixe\">T\xE9l\xE9phone fixe :</label>\n              <input type=\"text\" id=\"updateTelFixe\">\n              </br>\n              <label for=\"updateTelPort\">T\xE9l\xE9phone portable :</label>\n              <input type=\"text\" id=\"updateTelPort\">\n              </br>\n              </br>\n              <input type=\"submit\" id=\"btnUpdateUser\" value=\"Update utilisateur\">\n          </form>\n      </div>\n    \n\n\n\n  <div id=\"infos\" class=\"tab-pane\">\n      <h3>Mes Missions</h3>\n      \n\n\n  </div>\n  \n  \n  \n  <div id=\"files\" class=\"tab-pane fade\">                        \n      <h3>FILES</h3>\n      <div class=\"container\">\n          <div class=\"row\">\n              <div class=\"col-sm-4\">\n                  <div id=\"treeview\" class=\"\">\n                  </div>\n              </div>\n          </div>\n      </div>\n  </div>";
     return html;
 }
 
@@ -182,30 +212,11 @@ function initFiles() {
 }
 
 function makeAjoutMessage(data) {
-    var txt2 = $("<p id='newP'></p>").text("Ajout client réussi");
-    $("#output").append(txt2);
+    //gestion de la réussite de l'ajout client  
+    console.log("ajout client réussi");
 }
 
 function makeUpdateMessage(data) {
-    var txt2 = $("<p id='newP'></p>").text("update client réussi");
-    $("#output").append(txt2);
+    //gestion de la réussite de l'update client  
+    console.log("update client réussi");
 }
-
-$("#formAjoutUser").submit(function (event) {
-    event.preventDefault();
-    if ($("#ajoutLogin").val() != "" && $("#ajoutPass").val() != "") {
-        postUser("/test/utilisateur/", $("#ajoutNom").val(), $("#ajoutTelPort").val(), $("#ajoutTelFixe").val(), $("#ajoutEnt").val(), $("#ajoutFonct").val(), $("#ajoutRue").val(), $("#ajoutPrenom").val(), $("#ajoutCP").val(), $("#ajoutVille").val(), $("#ajoutLogin").val(), $("#ajoutPass").val(), $("#ajoutRole").val());
-    }
-});
-
-$("#formUpdateUser").submit(function (event) {
-    event.preventDefault();
-    updateUser("/test/utilisateur/", $("#updateNom").val(), $("#updateTelPort").val(), $("#updateTelFixe").val(), $("#updateEnt").val(), $("#updateFonct").val(), $("#updateRue").val(), $("#updatePrenom").val(), $("#updateCP").val(), $("#updateVille").val(), $("#updateLogin").val(), $("#updatePass").val());
-});
-
-$("#formAjoutMission").submit(function (event) {
-    event.preventDefault();
-    if ($("#missionNom").val() != "") {
-        postMission("/test/mission/", $("#missionClient").val(), $("#missionNom").val(), $("#missionDesc").val(), $("#missionEtat").val());
-    }
-});
