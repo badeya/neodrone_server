@@ -376,3 +376,173 @@ java.io.IOException: The directory "/home/infoetu/sengesc/.eclipse/org.eclipse.p
 	at org.eclipse.jface.resource.URLImageDescriptor$URLImageFileNameProvider.getImagePath(URLImageDescriptor.java:54)
 	at org.eclipse.swt.internal.DPIUtil.validateAndGetImagePathAtZoom(DPIUtil.java:408)
 	at org.eclipse.swt.graphics.Imag
+!ENTRY org.eclipse.jface.text 2 0 2018-03-26 10:18:31.046
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-26 10:18:31.048
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-03-26 10:18:52.609
+!MESSAGE Failed to download org.eclipse.recommenders:index::zip:0.0.0
+!STACK 0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT from/to models (http://download.eclipse.org/recommenders/models/oxygen/): Connect to download.eclipse.org:80 timed out
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303)
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193)
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172)
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168)
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT from/to models (http://download.eclipse.org/recommenders/models/oxygen/): Connect to download.eclipse.org:80 timed out
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:52)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430)
+	... 8 more
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to download.eclipse.org:80 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:122)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:328)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:164)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:296)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:252)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:68)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:456)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:359)
+	... 13 more
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2018-03-26 10:18:52.612
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
+
+!ENTRY org.eclipse.jdt.launching 4 150 2018-03-26 10:19:55.063
+!MESSAGE The archive: /home/infoetu/sengesc/neodrone/neodrone_serveur/libs/commons-io-2.6.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2018-03-26 10:20:07.390
+!MESSAGE The archive: /home/infoetu/sengesc/neodrone/neodrone_serveur/libs/commons-io-2.6.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2018-03-26 10:38:28.290
+!MESSAGE Full project indexing required:
+  [+] /home/infoetu/sengesc/.m2/repository/ch/qos/logback/logback-classic/1.1.7/logback-classic-1.1.7.jar
+  [+] /home/infoetu/sengesc/.m2/repository/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.jar
+  [+] /home/infoetu/sengesc/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12.jar
+  [+] /home/infoetu/sengesc/.m2/repository/com/sun/xml/stream/sjsxp/1.0.1/sjsxp-1.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+  [+] /home/infoetu/sengesc/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar
+  [+] /home/infoetu/sengesc/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/javax/xml/stream/stax-api/1.0/stax-api-1.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/junit/junit/4.12/junit-4.12.jar
+  [+] /home/infoetu/sengesc/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/apache/httpcomponents/httpclient/4.5.4/httpclient-4.5.4.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/apache/httpcomponents/httpcore/4.4.7/httpcore-4.4.7.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/apache/james/apache-mime4j/0.6/apache-mime4j-0.6.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/microprofile/config/microprofile-config-api/1.1/microprofile-config-api-1.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/microprofile/rest/client/microprofile-rest-client-api/1.0/microprofile-rest-client-api-1.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.0/org.eclipse.persistence.asm-2.6.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.0/org.eclipse.persistence.core-2.6.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.0/org.eclipse.persistence.moxy-2.6.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b32/aopalliance-repackaged-2.5.0-b32.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/external/javax.inject/2.5.0-b32/javax.inject-2.5.0-b32.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/hk2-api/2.5.0-b32/hk2-api-2.5.0-b32.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/hk2-locator/2.5.0-b32/hk2-locator-2.5.0-b32.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/hk2-utils/2.5.0-b32/hk2-utils-2.5.0-b32.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25.1/jersey-guava-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.25.1/jersey-container-servlet-core-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.25.1/jersey-container-servlet-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/containers/jersey-container-simple-http/2.25.1/jersey-container-simple-http-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/core/jersey-client/2.25.1/jersey-client-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/core/jersey-common/2.25.1/jersey-common-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/core/jersey-server/2.25.1/jersey-server-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.25.1/jersey-entity-filtering-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.25.1/jersey-media-jaxb-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.25.1/jersey-media-moxy-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.25.1/jersey-media-multipart-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/test-framework/jersey-test-framework-core/2.25.1/jersey-test-framework-core-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-simple/2.25.1/jersey-test-framework-provider-simple-2.25.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/2.1-beta-1/resteasy-jaxb-provider-2.1-beta-1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/resteasy/resteasy-jaxrs/3.5.0.Final/resteasy-jaxrs-3.5.0.Final.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/resteasy/resteasy-multipart-provider/2.1-beta-1/resteasy-multipart-provider-2.1-beta-1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/1.0.0.Final/jboss-jaxrs-api_2.1_spec-1.0.0.Final.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jdbi/jdbi/2.56/jdbi-2.56.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/osgi/org.osgi.annotation.versioning/1.0.0/org.osgi.annotation.versioning-1.0.0.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/reactivestreams/reactive-streams/1.0.1/reactive-streams-1.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/simpleframework/simple-common/6.0.1/simple-common-6.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/simpleframework/simple-http/6.0.1/simple-http-6.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/simpleframework/simple-transport/6.0.1/simple-transport-6.0.1.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/slf4j/slf4j-api/1.7.20/slf4j-api-1.7.20.jar
+  [+] /home/infoetu/sengesc/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.2/sqlite-jdbc-3.8.11.2.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/charsets.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/cldrdata.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/dnsns.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/jaccess.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/jfxrt.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/localedata.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/nashorn.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/sunec.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/sunjce_provider.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/sunpkcs11.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/ext/zipfs.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/jce.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/jfr.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/jsse.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/resources.jar
+  [+] /usr/lib/jvm/jdk-8-oracle-x64/jre/lib/rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.recommenders.types.rcp 4 2 2018-03-26 10:38:33.628
+!MESSAGE An error occurred while accessing the type hierarchy of type ‘module-info (not open) [in module-info.class [in <default> [in /home/infoetu/sengesc/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar]]]’.
+!STACK 1
+Java Model Exception: Java Model Status [module-info [in module-info.class [in <default> [in /home/infoetu/sengesc/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:786)
+	at org.eclipse.jdt.internal.core.BinaryType.newSupertypeHierarchy(BinaryType.java:826)
+	at org.eclipse.jdt.internal.core.BinaryType.newSupertypeHierarchy(BinaryType.java:778)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.indexType(ProjectTypesIndex.java:409)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.rebuildRoot(ProjectTypesIndex.java:358)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.rebuild(ProjectTypesIndex.java:345)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex$2.doRun(ProjectTypesIndex.java:321)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex$2.run(ProjectTypesIndex.java:312)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2018-03-26 10:38:33.629
+!MESSAGE module-info [in module-info.class [in <default> [in /home/infoetu/sengesc/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar]]] does not exist
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-26 10:39:09.104
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-26 10:39:09.105
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
