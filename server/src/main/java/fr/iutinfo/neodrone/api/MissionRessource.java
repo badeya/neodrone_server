@@ -58,12 +58,12 @@ public class MissionRessource {
     
     @PUT
     public MissionDTO modifMission(MissionDTO dto) {
-    	Mission user = dao.findByName(dto.getClient());
-    	if (user == null) {
+    	Mission m = dao.findByName(dto.getClient());
+    	if (m == null) {
             throw new WebApplicationException(404);
         }
-    	user.initFromDto(dto);
-    	dao.modifierMission(user);
+    	m.initFromDto(dto);
+    	dao.modifierMission(m);
     	return dto;
     }
     
