@@ -75,9 +75,6 @@ public class MissionRessource {
         return dto;
     }
     
-    
-    
-    
     @GET
     public List<MissionDTO> getAllUsers() {
         List<Mission> users;
@@ -88,4 +85,5 @@ public class MissionRessource {
         }
         return usersDTO;
     }
+
 }

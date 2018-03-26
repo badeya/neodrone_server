@@ -90,4 +90,8 @@ public class FichierRessource {
         }
         return usersDTO;
     }
+    
+    public static FichierDAO getDao() {
+    	return dao;
+    }
 }

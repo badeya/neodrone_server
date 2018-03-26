@@ -5,9 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.Date;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -15,6 +18,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.commons.codec.binary.Hex;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.slf4j.Logger;
@@ -27,13 +31,14 @@ import fr.iutinfo.neodrone.auth.AuthFilter;
 public class RestFileDemo {
 	
 	private String uploadRoot = "/home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/main/webapp/uploads/";
-
+	//private String uploadRoot = "/tmp/";
 	@POST
 	@Path("/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	public Response postForm(
 			@FormDataParam("exampleFileUpload") InputStream file,
-			@FormDataParam("exampleFileUpload") FormDataContentDisposition fileDetail) {
+			@FormDataParam("exampleFileUpload") FormDataContentDisposition fileDetail,
+			@FormDataParam("missionId") String missionId) {
 		
 		// --- LOG
 		Logger logger = LoggerFactory.getLogger(AuthFilter.class);
@@ -43,7 +48,10 @@ public class RestFileDemo {
 		String originalFileName = fileDetail.getFileName();
 		String serverFileName = generateFileName(originalFileName);
 		
-		String uploadedFileLocation = uploadRoot + serverFileName;
+		String uploadedFileLocation = uploadRoot + generateFileName(originalFileName);
+		
+		// Insert in DB
+		//createEntry(0, serverFileName, );
 
 		// save it
 		writeToFile(file, uploadedFileLocation);
@@ -80,18 +88,31 @@ public class RestFileDemo {
 	private String generateFileName(String original) {
 		String raw = original + (new Timestamp(System.currentTimeMillis()));
 		
+		Logger logger = LoggerFactory.getLogger(AuthFilter.class);
+		logger.debug(raw);
+		
 		MessageDigest messageDigest = null;
 		
 		try {
 			messageDigest = MessageDigest.getInstance("SHA-256");
-		} catch (NoSuchAlgorithmException e) {
+			messageDigest.update(raw.getBytes("UTF-8"));
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 			System.exit(1);
 		}
 		
-		messageDigest.update(raw.getBytes());
-		
-		String hashName = new String(messageDigest.digest());
+		String hashName = new String(Hex.encodeHexString(messageDigest.digest()));
+		logger.debug(hashName);
 		
 		return hashName;
+	}
+	
+	private void createEntry(String idMission, String serverName, String realName) {
+		FichierRessource.getDao().insert(new Fichier(
+				"42", 
+				idMission,
+				DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT).format(new Date()),
+				serverName, 
+				realName
+		));
 	}
 }

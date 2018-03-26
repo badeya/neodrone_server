@@ -18,7 +18,6 @@ INDEX VERSION 1.130+/home/infoetu/sengesc/neodrone/neodrone_serveur/.metadata/.p
 3840181845.index
 272272474.index
 1246123095.index
-1328996958.index
 1456202049.index
 1867512007.index
 3611504576.index
