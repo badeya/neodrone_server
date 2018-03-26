@@ -86,6 +86,7 @@ public class UtilisateurRessource {
     
     
     @POST
+    @RolesAllowed({"admin"})
     public UtilisateurDTO createUser(UtilisateurDTO dto) {
         Utilisateur user = new Utilisateur();
         user.initFromDto(dto);
