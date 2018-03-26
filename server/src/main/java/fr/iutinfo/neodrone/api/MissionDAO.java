@@ -11,6 +11,10 @@ public interface MissionDAO {
 	@SqlQuery("select * from mission where client = :nom")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Mission findByName(@Bind("nom") String nom);
+	
+	@SqlQuery("select * from mission where id = :id")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Mission findByID(@Bind("id") String id);
 
 	  
 	@SqlUpdate("insert into mission(etat,client,description,mission) values (:etat,:client,:description,:mission)")
@@ -24,5 +28,6 @@ public interface MissionDAO {
 	@SqlUpdate("update mission set etat = :etat, mission = :mission where id = :id")
     @GetGeneratedKeys
     int modifierMission(@BindBean() Mission mission);
+	
 	
 }
