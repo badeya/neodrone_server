@@ -3,7 +3,9 @@ package fr.iutinfo.neodrone.api;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
-import fr.iutinfo.skeleton.common.dto.UserDto;
+
+import fr.iutinfo.neodrone.common.dto.UserDto;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

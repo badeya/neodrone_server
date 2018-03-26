@@ -1,6 +1,6 @@
 package fr.iutinfo.skeleton.cli;
 
-import fr.iutinfo.skeleton.common.dto.UserDto;
+import fr.iutinfo.neodrone.common.dto.UserDto;
 import fr.iutinfo.skeleton.common.remote.UsersProvider;
 
 import java.util.List;

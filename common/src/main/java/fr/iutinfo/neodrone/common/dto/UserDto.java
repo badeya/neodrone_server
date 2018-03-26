@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.common.dto;
+package fr.iutinfo.neodrone.common.dto;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

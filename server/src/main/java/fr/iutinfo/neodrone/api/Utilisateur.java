@@ -10,7 +10,7 @@ import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 
-import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
+import fr.iutinfo.neodrone.common.dto.UtilisateurDTO;
 /**
  *Représente les utilisateur enregistré sur le site web
  *Un utilisateur peut être un Administrateur ou un Utilisateur 

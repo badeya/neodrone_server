@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.servlet;
+package fr.iutinfo.neodrone.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;

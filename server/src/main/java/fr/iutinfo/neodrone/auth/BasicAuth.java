@@ -1,4 +1,4 @@
-package fr.iutinfo.skeleton.auth;
+package fr.iutinfo.neodrone.auth;
 
 import javax.xml.bind.DatatypeConverter;
 
