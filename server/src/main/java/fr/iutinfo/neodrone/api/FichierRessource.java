@@ -23,6 +23,7 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import fr.iutinfo.neodrone.common.dto.MissionDTO;
 import fr.iutinfo.skeleton.common.dto.FichierDTO;
 
 
@@ -52,12 +53,15 @@ public class FichierRessource {
 
     @GET
     @Path("/{idM}")
-    public FichierDTO getUser2(@PathParam("idM") String idM) {
-        Fichier user = dao.findByName(idM);
-        if (user == null) {
-            throw new WebApplicationException(404);
+    public List<FichierDTO> getUser2(@PathParam("idM") String idM) {
+    	List<Fichier> users;
+        users = dao.all();
+        List<FichierDTO> usersDTO = new ArrayList<FichierDTO>();
+        for(Fichier u : users) {
+        	if(u.getIdM().equals(idM))
+        	usersDTO.add(u.converToDTO());
         }
-        return user.converToDTO();
+        return usersDTO;
     }
     
     
