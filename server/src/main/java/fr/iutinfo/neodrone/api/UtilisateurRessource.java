@@ -41,7 +41,7 @@ public class UtilisateurRessource {
            // dao.insert(new Utilisateur(1, "Carle", "Jean","test"));
             //dao.insert(new Utilisateur(2, "larle", "Jean","test"));
             dao.insert(new Utilisateur(1,"Carle","Jean","admin","neodrone","pdg","Lille","59000","rue 1","0602","0302","test@gmail.com","mdp"));
-            dao.insert(new Utilisateur(2,"Bruno","François","client","neodrone","sousfifre","Paris","59000","rue de la liberté","06020040040","0300042012","dsdsds@gmail.com","mdp2ouf"));
+            dao.insert(new Utilisateur(2,"Bruno","François","client","neodrone","employé","Paris","59000","rue de la liberté","06020040040","0300042012","dsdsds@gmail.com","mdp2ouf"));
 
         }
     }
