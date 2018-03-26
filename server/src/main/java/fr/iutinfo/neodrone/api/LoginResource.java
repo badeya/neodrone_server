@@ -1,8 +1,9 @@
 package fr.iutinfo.neodrone.api;
 
-import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import fr.iutinfo.neodrone.common.dto.UtilisateurDTO;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;

@@ -1,8 +1,9 @@
 package fr.iutinfo.skeleton.common.remote;
 
-import fr.iutinfo.skeleton.common.dto.UserDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import fr.iutinfo.neodrone.common.dto.UserDto;
 
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;

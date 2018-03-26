@@ -20,7 +20,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fr.iutinfo.skeleton.auth.AuthFilter;
+import fr.iutinfo.neodrone.auth.AuthFilter;
 
 
 @Path("/")

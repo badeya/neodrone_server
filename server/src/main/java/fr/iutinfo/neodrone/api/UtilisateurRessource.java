@@ -23,7 +23,7 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
+import fr.iutinfo.neodrone.common.dto.UtilisateurDTO;
 
 @Path("/utilisateur")
 @Produces(MediaType.APPLICATION_JSON)

@@ -2,8 +2,8 @@ package fr.iutinfo.neodrone.api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fr.iutinfo.skeleton.common.dto.MissionDTO;
-import fr.iutinfo.skeleton.common.dto.UtilisateurDTO;
+import fr.iutinfo.neodrone.common.dto.MissionDTO;
+import fr.iutinfo.neodrone.common.dto.UtilisateurDTO;
 public class Mission {
     final static Logger logger = LoggerFactory.getLogger(Mission.class);
     private int id;
