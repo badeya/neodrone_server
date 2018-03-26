@@ -36,9 +36,8 @@ public class MissionRessource {
         if (!tableExist("mission")) {
             logger.debug("Crate table mission");
             dao.createMissionTable();
-            dao.insert(new Mission(1,"Debut","Jean@gmail.com","C'est la meilleur mission","Mission1"));
-            dao.insert(new Mission(2,"Fin","Carle@free.fr","UNe mission incroyable","Mission2"));
-            dao.insert(new Mission(3,"Debut","Carle@yahoo.fr","La pire mission lul","Mission3"));
+            dao.insert(new Mission(1,"Fichiers disponibles","dsdsds@gmail.com","Prise de vue de l'IUT","Photo IUT"));
+            dao.insert(new Mission(2,"Autorisation obtenue","dsdsds@gmail.com","Prise de vue du stage Pierre Mauroy","Photo stade Pierre Mauroy"));
 
         }
     }
