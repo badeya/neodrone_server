@@ -37,6 +37,8 @@ function loadAdminFunction() {
         event.preventDefault();
         if ($("#missionNom").val() != "") {
             postMission("/test/mission/", $("#missionClient").val(), $("#missionNom").val(), $("#missionDesc").val(), $("#missionEtat").val());
+            getMissionsAdmin();
+            console.log("!!!!!");
         }
     });
 
