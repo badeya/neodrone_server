@@ -1,0 +1,111 @@
+
+<script>
+/*functions initFile(user){
+  var defaultData = [{
+      text: 'mission1',
+      href: '#parent1',
+      nodes: [{
+          text: 'FILE 1',
+          href: '#child1', },
+          
+          {text: 'FILE 2',
+          href: '#child2',}]},
+      {
+          text: 'mission2',
+          href: '#parent2',
+          nodes: [
+              {
+                  text: 'FILE 1',
+                  icon: 'glyphicon glyphicon-camera',
+                  href: 'localhost:8080',
+                  selectable: true,
+              },
+              {
+                  text: 'FILE 2',
+                  icon: 'glyphicon glyphicon-film',
+                  href: 'http://www.google.fr',
+                  selectable: true,
+                  state: {
+                      checked: false,
+                      disabled: false,
+                      expanded: false,
+                      selected: false
+                  },
+              }
+          ]
+      },
+  
+      {text: 'mission3',
+      href: '#parent3',},
+
+      {text: 'mission4',
+      href: '#parent4'},
+
+      {text: 'mission5',
+      href: '#parent5' ,}];
+      
+  $('#treeview').treeview({
+      color: "#000000",
+      data: defaultData,enableLinks: true});
+  
+  
+}*/
+
+
+
+function getFichier(id){
+    $.ajax({
+		type : 'GET',
+		contentType : 'application/json',
+		url : "/test/fichier/" + id,
+		dataType : "json",
+		success : function(data, textStatus, jqXHR) {
+			afficherFichier(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
+}
+
+function afficherFichier(data){
+    let html = "<ul>";
+    for (var i = 0; i < data.length; i++) {
+      html += "<li>" + data[i].nomO + "</li>";
+    }
+    html += "</ul>";
+    $("body").html(html);
+}
+
+
+
+function afficherMission(data) {
+    console.log(data);
+    for (var i = 0; i < data.length; i++) {
+       getFichier(data[i].id) ;
+    }
+}
+
+
+function loadMission(idClient){
+    $.ajax({
+		type : 'GET',
+		contentType : 'application/json',
+		url : "/test/mission/" + idClient,
+		dataType : "json",
+		success : function(data, textStatus, jqXHR) {
+			afficherMission(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
+
+}
+
+
+
+
+</script>
+
+<script src='jquery-3.3.1.js'></script>
