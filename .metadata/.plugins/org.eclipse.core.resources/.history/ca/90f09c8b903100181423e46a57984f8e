@@ -30,7 +30,7 @@ import fr.iutinfo.neodrone.auth.AuthFilter;
 @Path("/")
 public class RestFileDemo {
 	
-	private String uploadRoot = System.getProperty("user.dir") + "/src/main/webapp/uploads/";
+	private String uploadRoot = "/home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/main/webapp/uploads/";
 	//private String uploadRoot = "/tmp/";
 	@POST
 	@Path("/upload")
@@ -49,8 +49,6 @@ public class RestFileDemo {
 		String serverFileName = generateFileName(originalFileName);
 		
 		String uploadedFileLocation = uploadRoot + generateFileName(originalFileName);
-		
-		System.out.println(uploadRoot);
 		
 		// Insert in DB
 		createEntry(missionId, serverFileName, originalFileName);

@@ -30,7 +30,7 @@ import fr.iutinfo.neodrone.auth.AuthFilter;
 @Path("/")
 public class RestFileDemo {
 	
-	private String uploadRoot = System.getProperty("user.dir") + "/src/main/webapp/uploads/";
+	private String uploadRoot = "uploads/";
 	//private String uploadRoot = "/tmp/";
 	@POST
 	@Path("/upload")
@@ -50,13 +50,14 @@ public class RestFileDemo {
 		
 		String uploadedFileLocation = uploadRoot + generateFileName(originalFileName);
 		
-		System.out.println(uploadRoot);
+		System.out.println("Working Directory = " +
+	              System.getProperty("user.dir"));
 		
 		// Insert in DB
-		createEntry(missionId, serverFileName, originalFileName);
+		//createEntry(missionId, serverFileName, originalFileName);
 
 		// save it
-		writeToFile(file, uploadedFileLocation);
+		//writeToFile(file, uploadedFileLocation);
 
 		// --- LOG
 		String output = "File uploaded to : " + uploadedFileLocation;
