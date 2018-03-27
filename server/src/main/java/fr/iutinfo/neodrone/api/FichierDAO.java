@@ -43,6 +43,10 @@ public interface FichierDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Fichier findByName(@Bind("nom") String nom);
 	
+	@SqlQuery("select * from fichier where nomS = :nom")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Fichier findByFileName(@Bind("nom") String nom);
+	
 	/*
 	@SqlQuery("select * from fichier where idM = :idM")
 	@RegisterMapperFactory(BeanMapperFactory.class)
