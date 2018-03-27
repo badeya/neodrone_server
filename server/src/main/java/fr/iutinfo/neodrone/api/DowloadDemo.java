@@ -15,7 +15,7 @@ public class DowloadDemo {
 	
 		
 	
-	String localDir = System.getProperty("user.dir");
+	private final String localDir = System.getProperty("user.dir");
 	
 			
 	
