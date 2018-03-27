@@ -48,7 +48,7 @@ public class RestFileDemo {
 		String originalFileName = fileDetail.getFileName();
 		String serverFileName = generateFileName(originalFileName);
 		
-		String uploadedFileLocation = uploadRoot + serverFileName;
+		String uploadedFileLocation = uploadRoot + generateFileName(originalFileName);
 		
 		System.out.println(uploadRoot);
 		

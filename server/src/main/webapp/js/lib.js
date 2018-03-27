@@ -263,40 +263,85 @@ function makeProfil(user) {
 }
 
 function initFiles() {
-    var defaultData = [{
-        text: 'mission1',
-        href: '#parent1',
-        nodes: [{
-            text: 'FILE 1',
-            href: '#child1' }, { text: 'FILE 2',
-            href: '#child2' }] }, {
-        text: 'mission2',
-        href: '#parent2',
-        nodes: [{
-            text: 'FILE 1',
-            icon: 'glyphicon glyphicon-camera',
-            href: 'localhost:8080',
-            selectable: true
-        }, {
-            text: 'FILE 2',
-            icon: 'glyphicon glyphicon-film',
-            href: 'http://www.google.fr',
-            selectable: true,
-            state: {
-                checked: false,
-                disabled: false,
-                expanded: false,
-                selected: false
-            }
-        }]
-    }, { text: 'mission3',
-        href: '#parent3' }, { text: 'mission4',
-        href: '#parent4' }, { text: 'mission5',
-        href: '#parent5' }];
 
-    $('#treeview').treeview({
-        color: "#000000",
-        data: defaultData, enableLinks: true });
+    var url = "/test/fichier";
+
+    $.getJSON(url, function () {
+        // TODO
+    })
+        .done(function (data) {
+
+            var i = 0;
+            var defaultData = [];
+
+            $.each(data, function (index, value) {
+
+                var test = {}
+                test.text = value.nomO;
+                test.href = '/test/download/' + value.nomS;
+
+                // var element = '<a href="/test/download/' + value.nomS + '"> ' + value.nomO + ' </a>';
+
+                // $("#treeview").append(element);
+
+                defaultData.push(test);
+
+                i++;
+
+            });
+
+            $('#treeview').treeview({
+                color: "#000000",
+                data: defaultData, enableLinks: true
+            });
+        });
+
+
+    // var defaultData = [{
+    //     text: 'mission1',
+    //     href: '#parent1',
+    //     nodes: [{
+    //         text: 'FILE 1',
+    //         href: '#child1'
+    //     }, {
+    //         text: 'FILE 2',
+    //         href: '#child2'
+    //     }]
+    // }, {
+    //     text: 'mission2',
+    //     href: '#parent2',
+    //     nodes: [{
+    //         text: 'FILE 1',
+    //         icon: 'glyphicon glyphicon-camera',
+    //         href: 'localhost:8080',
+    //         selectable: true
+    //     }, {
+    //         text: 'FILE 2',
+    //         icon: 'glyphicon glyphicon-film',
+    //         href: 'http://www.google.fr',
+    //         selectable: true,
+    //         state: {
+    //             checked: false,
+    //             disabled: false,
+    //             expanded: false,
+    //             selected: false
+    //         }
+    //     }]
+    // }, {
+    //     text: 'mission3',
+    //     href: '#parent3'
+    // }, {
+    //     text: 'mission4',
+    //     href: '#parent4'
+    // }, {
+    //     text: 'mission5',
+    //     href: '#parent5'
+    // }];
+
+    // $('#treeview').treeview({
+    //     color: "#000000",
+    //     data: defaultData, enableLinks: true
+    // });
 }
 
 function makeAjoutMessage(data) {

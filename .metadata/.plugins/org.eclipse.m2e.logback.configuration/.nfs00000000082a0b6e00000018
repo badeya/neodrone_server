@@ -611,3 +611,79 @@ Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to download.ecl
 2018-03-27 10:40:06,838 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
 2018-03-27 10:40:06,846 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-03-27 10:40:06,846 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:52:03,359 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,359 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:52:03,360 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,360 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/command-line-interface/src/test/resources
+2018-03-27 11:52:03,363 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,363 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/main/resources
+2018-03-27 11:52:03,364 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,364 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/test/resources
+2018-03-27 11:52:03,368 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,368 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-03-27 11:52:03,383 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 35 resources
+2018-03-27 11:52:03,386 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,386 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:52:03,391 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,392 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/main/resources
+2018-03-27 11:52:03,392 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:52:03,392 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/test/resources
+2018-03-27 11:53:19,627 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:53:19,628 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:53:19,628 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:53:19,629 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:53:19,629 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:53:47,791 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:53:47,791 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:53:47,791 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:53:47,791 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:53:47,792 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:56:35,874 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:56:35,875 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:56:35,875 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:56:35,875 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:56:35,875 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:57:35,033 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,034 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 11:57:35,034 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,034 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/command-line-interface/src/test/resources
+2018-03-27 11:57:35,037 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,037 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/main/resources
+2018-03-27 11:57:35,037 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,037 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/test/resources
+2018-03-27 11:57:35,043 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,043 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-03-27 11:57:35,047 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 37 resources
+2018-03-27 11:57:35,064 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,065 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 11:57:35,069 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,069 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/main/resources
+2018-03-27 11:57:35,070 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 11:57:35,070 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/test/resources
+2018-03-27 12:03:31,841 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,842 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 12:03:31,843 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,843 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/command-line-interface/src/test/resources
+2018-03-27 12:03:31,846 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,846 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/main/resources
+2018-03-27 12:03:31,847 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,847 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/common/src/test/resources
+2018-03-27 12:03:31,851 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,851 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-03-27 12:03:31,856 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 41 resources
+2018-03-27 12:03:31,875 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:31,875 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 12:03:32,038 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:32,038 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/main/resources
+2018-03-27 12:03:32,038 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:32,038 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/client-library/src/test/resources
+2018-03-27 12:03:57,493 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:57,493 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 12:03:57,493 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 12:03:57,493 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:03:57,494 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
+2018-03-27 12:05:18,142 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:05:18,143 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 12:05:18,143 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-03-27 12:05:18,144 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-27 12:05:18,144 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/infoetu/sengesc/neodrone/neodrone_serveur/server/src/test/resources
