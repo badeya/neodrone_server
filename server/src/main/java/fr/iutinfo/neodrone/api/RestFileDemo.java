@@ -51,7 +51,7 @@ public class RestFileDemo {
 		String uploadedFileLocation = uploadRoot + generateFileName(originalFileName);
 		
 		// Insert in DB
-		//createEntry(0, serverFileName, );
+		createEntry(missionId, serverFileName, originalFileName);
 
 		// save it
 		writeToFile(file, uploadedFileLocation);
