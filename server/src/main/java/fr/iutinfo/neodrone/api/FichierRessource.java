@@ -45,6 +45,7 @@ public class FichierRessource {
             dao.createFichierTable();
            dao.insert(new Fichier("1","2",d2+"", "0X121212", "photoAntenne"));
            dao.insert(new Fichier("2","2",d2+"", "xaxaxaxa", "photo90cm"));
+           dao.insert(new Fichier("42","1",d2+"", "xoxoxoxoxo", "photo60cm"));
 
 
 

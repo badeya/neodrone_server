@@ -48,7 +48,7 @@ public interface FichierDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Fichier findByIdM(@Bind("idM") String idM);
 	  */
-	@SqlUpdate("insert into fichier (idF,idM,dateF,nomS,nomO) values (:idF, :idM, :dateF, :nomS, :nomO)")
+	@SqlUpdate("insert into fichier (idM,dateF,nomS,nomO) values (:idM, :dateF, :nomS, :nomO)")
     @GetGeneratedKeys
     int insert(@BindBean() Fichier fichier);  
 	
